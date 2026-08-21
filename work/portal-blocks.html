@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portal Blocks — Roksana Truszkowska</title>
+<meta name="description" content="A 0-to-1 block system for Unily Futures, designed for two builders who fail in opposite directions: a cautious CMS editor and an AI agent.">
+<meta property="og:title" content="Portal Blocks — Roksana Truszkowska">
+<meta property="og:description" content="A 0-to-1 block system for Unily Futures, designed for two builders who fail in opposite directions: a cautious CMS editor and an AI agent.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500&family=Poppins:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/layout.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/case-study.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+
+<nav class="nav" id="nav">
+  <div class="in">
+    <a class="brand" href="../index.html">Roksana Truszkowska</a>
+    <div class="links">
+      <a class="hide-s" href="../index.html#work">Work</a>
+      <a class="hide-s" href="../index.html#about">About</a>
+      <a href="mailto:roksanatruszkowska@outlook.com">Email</a>
+    </div>
+  </div>
+</nav>
+
+<main class="cs-blocks cs-grid" id="content">
+  <div class="stickers" aria-hidden="true">
+    <div class="stk" data-anchor="self" data-drift=".10" data-left="3.5%" data-rotate="-12" data-top="4%" data-width="76">
+      <img src="../assets/img/stickers/star-tilted.webp" alt="">
+    </div>
+    <div class="stk" data-anchor="self" data-drift="-.05" data-right="0%" data-rotate="0" data-top="2%" data-width="210">
+      <img src="../assets/img/stickers/blob-wide.webp" alt="">
+    </div>
+    <div class="stk" data-anchor="self" data-drift="-.11" data-right="2.5%" data-rotate="10" data-top="17%" data-width="82">
+      <img src="../assets/img/stickers/block-grid.webp" alt="">
+    </div>
+    <div class="stk" data-anchor="self" data-drift=".09" data-left="3%" data-rotate="-8" data-top="30%" data-width="86">
+      <img src="../assets/img/stickers/stack.webp" alt="">
+    </div>
+    <div class="stk" data-anchor="self" data-drift="-.10" data-right="3%" data-rotate="9" data-top="54%" data-width="78">
+      <img src="../assets/img/stickers/folder.webp" alt="">
+    </div>
+    <div class="stk" data-anchor="self" data-drift=".05" data-left="0%" data-rotate="0" data-top="63%" data-width="180">
+      <img src="../assets/img/stickers/blob-round.webp" alt="">
+    </div>
+    <div class="stk" data-anchor="self" data-drift=".08" data-left="2.5%" data-rotate="0" data-top="76%" data-width="92">
+      <img src="../assets/img/stickers/bubble.webp" alt="">
+    </div>
+    <div class="stk" data-anchor="self" data-drift=".11" data-right="3.5%" data-rotate="14" data-top="91%" data-width="68">
+      <img src="../assets/img/stickers/star.webp" alt="">
+    </div>
+  </div>
+  <header class="cs-hero">
+    <div class="wrap">
+      <span class="eyebrow rv">Case study — 0 to 1, Unily Futures</span>
+      <h1 class="display rv">A block system a CMS editor and an AI agent can both build with</h1>
+      <p class="lede rv">
+        Futures shipped with no way to build a page. I designed the block library, the responsive rules and the CMS
+        editing experience — for two builders who fail in opposite directions.
+      </p>
+    </div>
+  </header>
+  <div class="wrap">
+    <video class="shot rv" poster="../assets/video/portal-blocks-editor-poster.jpg" autoplay="" controls="" loop="" muted="" playsinline="" preload="metadata">
+      <source src="../assets/video/portal-blocks-editor.webm" type="video/webm">
+      <source src="../assets/video/portal-blocks-editor.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="wrap">
+    <div class="cs-meta rv">
+      <div>
+        <div class="mrow">
+          <span>Role</span>
+          <span>Product Designer</span>
+        </div>
+        <div class="mrow">
+          <span>Team</span>
+          <span>Design system lead, 1 PM, 2 front-end, 1 platform, the AI team</span>
+        </div>
+        <div class="mrow">
+          <span>Platforms</span>
+          <span>Web, AI-native intranet CMS</span>
+        </div>
+        <div class="mrow">
+          <span>Scope</span>
+          <span>Block library, CMS editor UI, AI templates — on shared token foundations</span>
+        </div>
+      </div>
+      <div>
+        <div class="tile">
+          <div class="n">
+            ~40%
+          </div>
+          <div class="l">
+            faster page builds
+          </div>
+        </div>
+        <div class="tile">
+          <div class="n">
+            0 → 1
+          </div>
+          <div class="l">
+            no block library, visual language or build experience existed before this
+          </div>
+        </div>
+        <div class="tile">
+          <div class="n">
+            12+
+          </div>
+          <div class="l">
+            blocks shipped at launch
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="split rv open">
+      <div class="t">
+        <span class="beat-n">01 — The problem</span>
+        <h2 class="h2">Two builders, two failure modes</h2>
+        <p class="body sm">
+          Futures launched with no native way to build a page. No block library, no defined visual language, no CMS
+          experience for configuring one — and two very different builders who both needed one, failing in opposite
+          directions.
+        </p>
+        <p class="body sm">
+          The CMS editor defaults to caution. In prototype testing, editors reached for whichever two or three
+          configurations they had been shown first rather than exploring the range available to them. They learn what
+          looks right through trial and error, not documentation. What they need is guardrails that prevent mistakes,
+          not more options to weigh up.
+        </p>
+        <p class="body sm">
+          Indi — Unily’s AI experience agent — has the opposite problem. No visual intuition to fall back on, so
+          open-ended fields produce pages that are technically valid and visually broken. It reasons through Unily’s
+          OPAR framework and checks its own output against a Brand Identity Agent, which means every rule it works to
+          has to be explicit enough to verify programmatically. Guidelines that read well to a human designer are not
+          enough.
+        </p>
+        <p class="body sm">
+          Without a shared system, every page would have to be reasoned about individually rather than assembled from
+          a trusted set of parts. Slow, inconsistent builds for editors — and no foundation at all for Indi.
+        </p>
+      </div>
+      <div class="v v-stack">
+        <img class="shot" src="../assets/img/blocks/indi-empty-page.webp" alt="Indi's chat panel proposing a three-step plan beside an empty page canvas">
+        <img class="shot" src="../assets/img/blocks/analysis-board.webp" alt="Block analysis board grouping new blocks, enhancements and integrations by priority">
+      </div>
+    </div>
+    <div class="split flip rv">
+      <div class="t">
+        <span class="beat-n">02 — Discovery</span>
+        <h2 class="h2">The breakage wasn’t layout, it was content</h2>
+        <p class="body sm">
+          Three findings shaped the system more than anything else. <strong>Editors defaulted to safe
+          configurations</strong>, repeating the arrangements demonstrated to them first rather than exploring what
+          was available — so the guardrails had to be built in, not documented. <strong>Indi needed constraints, not
+          options</strong>: fields designed around a human editor’s judgement produced inconsistent results in early
+          testing.
+        </p>
+        <p class="body sm">
+          The third is the one that redirected the work. <strong>Most breakage traced back to content, not
+          layout.</strong> Across both audiences, visually broken test pages were almost always caused by headlines,
+          copy or images falling outside what a block was designed to hold. The grid and the component code were
+          rarely the problem.
+        </p>
+        <p class="body sm">
+          That moved the design effort away from more layout options and towards content constraints — which is what
+          both builders actually needed.
+        </p>
+      </div>
+      <div class="v">
+        <img class="shot" src="../assets/img/blocks/reviewer-feedback.webp" alt="Reviewer feedback stickies across prototype pages">
+      </div>
+    </div>
+    <div class="beat rv">
+      <span class="beat-n">03 — Architecture</span>
+      <h2 class="h2">Mapped the architecture before drawing a screen</h2>
+      <p class="body sm">
+        Before designing a single screen, I mapped the block architecture: how blocks compose into a page, where the
+        system-controlled tokens we had agreed with the design system lead end and editor-configurable fields begin,
+        and how Indi’s reference templates relate to that same structure.
+      </p>
+      <p class="body sm">
+        That map became the backbone both the block library and the CMS editor experience were built against — and
+        the reason new block types inherit constraints automatically instead of needing a bespoke rule written for
+        Indi every time.
+      </p>
+      <div class="diagram">
+        <svg aria-label="Block architecture map" role="img" viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="ah2" markerHeight="7" markerWidth="7" orient="auto-start-reverse" refX="8" refY="5" viewBox="0 0 10 10">
+              <path d="M0 0 L10 5 L0 10 z" fill="#8E8E98"/>
+            </marker>
+          </defs>
+          <rect fill="#fff" height="900" width="1200"/>
+          <text fill="#8E8E98" font-size="11" font-weight="500" letter-spacing=".14em" text-anchor="start" x="60" y="34">HOW A PAGE IS MADE</text>
+          <rect fill="#FAFAFB" height="352" stroke="#D5D5DA" stroke-width="1" width="470" x="60" y="50"/>
+          <text class="d" fill="#111114" font-size="16" font-weight="500" letter-spacing="0" text-anchor="start" x="80" y="80">Page</text>
+          <rect fill="#fff" height="286" stroke="#D5D5DA" stroke-width="1" width="422" x="84" y="96"/>
+          <text fill="#111114" font-size="14.5" font-weight="500" letter-spacing="0" text-anchor="start" x="102" y="124">Section</text>
+          <text fill="#8E8E98" font-size="13" font-weight="400" letter-spacing="0" text-anchor="start" x="168" y="124">— layout only: 1, 2 or 3 columns</text>
+          <rect fill="#FAFAFB" height="222" stroke="#D5D5DA" stroke-width="1" width="382" x="104" y="140"/>
+          <text fill="#111114" font-size="14.5" font-weight="500" letter-spacing="0" text-anchor="start" x="122" y="168">Block</text>
+          <rect fill="#F2E0B6" height="58" stroke="none" stroke-width="1" width="346" x="122" y="184"/>
+          <g fill="none" stroke="#111114" stroke-width="1.5">
+            <rect height="9" rx="1.5" width="11" x="140" y="204"/>
+            <path d="M142.5 204 v-3 a3 3 0 0 1 6 0 v3"/>
+          </g>
+          <text fill="#111114" font-size="14" font-weight="500" letter-spacing="0" text-anchor="start" x="164" y="209">Tokens — locked</text>
+          <text fill="#5C5C66" font-size="12.5" font-weight="400" letter-spacing="0" text-anchor="start" x="164" y="228">colour, type scale, spacing, radius, states</text>
+          <rect fill="#D9E9F2" height="58" stroke="none" stroke-width="1" width="346" x="122" y="256"/>
+          <text fill="#111114" font-size="14" font-weight="500" letter-spacing="0" text-anchor="start" x="140" y="281">Fields — editable</text>
+          <text fill="#5C5C66" font-size="12.5" font-weight="400" letter-spacing="0" text-anchor="start" x="140" y="300">headline, body, image, CTA, count</text>
+          <text fill="#5C5C66" font-size="13.5" font-weight="400" letter-spacing="0" text-anchor="start" x="122" y="340">A block is what it cannot change,</text>
+          <text fill="#5C5C66" font-size="13.5" font-weight="400" letter-spacing="0" text-anchor="start" x="122" y="358">plus the little it can.</text>
+          <text fill="#8E8E98" font-size="11" font-weight="500" letter-spacing=".14em" text-anchor="start" x="570" y="34">WHERE THE LINE SITS</text>
+          <rect fill="#fff" height="150" stroke="#D5D5DA" stroke-width="1" width="570" x="570" y="50"/>
+          <g fill="none" stroke="#111114" stroke-width="1.5">
+            <rect height="9" rx="1.5" width="11" x="594" y="71"/>
+            <path d="M596.5 71 v-3 a3 3 0 0 1 6 0 v3"/>
+          </g>
+          <text class="d" fill="#111114" font-size="16" font-weight="500" letter-spacing="0" text-anchor="start" x="618" y="80">System-controlled</text>
+          <text fill="#8E8E98" font-size="12.5" font-weight="400" letter-spacing="0" text-anchor="end" x="1120" y="80">agreed with the design system lead</text>
+          <line stroke="#D5D5DA" x1="570" x2="1140" y1="98" y2="98"/>
+          <text fill="#5C5C66" font-size="13.5" font-weight="400" letter-spacing="0" text-anchor="start" x="594" y="128">— Colour scheme and surfaces</text>
+          <text fill="#5C5C66" font-size="13.5" font-weight="400" letter-spacing="0" text-anchor="start" x="594" y="154">— Type scale and hierarchy</text>
+          <text fill="#5C5C66" font-size="13.5" font-weight="400" letter-spacing="0" text-anchor="start" x="866" y="128">— Spacing, grid and breakpoints</text>
+          <text fill="#5C5C66" font-size="13.5" font-weight="400" letter-spacing="0" text-anchor="start" x="866" y="154">— Radius, elevation, states</text>
+          <line stroke="#111114" stroke-dasharray="6 5" stroke-width="1.4" x1="570" x2="1140" y1="226" y2="226"/>
+          <text fill="#111114" font-size="12.5" font-weight="500" letter-spacing="0" text-anchor="start" x="570" y="248">the boundary — drawn once, inherited by everything after it</text>
+          <rect fill="#fff" height="134" stroke="#D5D5DA" stroke-width="1" width="570" x="570" y="268"/>
+          <text class="d" fill="#111114" font-size="16" font-weight="500" letter-spacing="0" text-anchor="start" x="594" y="300">Editor-configurable</text>
+          <line stroke="#D5D5DA" x1="570" x2="1140" y1="316" y2="316"/>
+          <text fill="#5C5C66" font-size="13.5" font-weight="400" letter-spacing="0" text-anchor="start" x="594" y="344">— Headline and body — within a range</text>
+          <text fill="#5C5C66" font-size="13.5" font-weight="400" letter-spacing="0" text-anchor="start" x="594" y="370">— Image — auto-cropped to the block</text>
+          <text fill="#5C5C66" font-size="13.5" font-weight="400" letter-spacing="0" text-anchor="start" x="866" y="344">— CTA label and link</text>
+          <text fill="#5C5C66" font-size="13.5" font-weight="400" letter-spacing="0" text-anchor="start" x="866" y="370">— Cards per row — min to max</text>
+          <line stroke="#D5D5DA" x1="60" x2="1140" y1="452" y2="452"/>
+          <text fill="#8E8E98" font-size="11" font-weight="500" letter-spacing=".14em" text-anchor="start" x="60" y="486">INDI’S REFERENCE TEMPLATES — THE SAME BLOCKS, IN A KNOWN ORDER</text>
+          <rect fill="#E6E2F4" height="120" stroke="none" stroke-width="1" width="140" x="60" y="506"/>
+          <text class="d" fill="#111114" font-size="17" font-weight="500" letter-spacing="0" text-anchor="start" x="80" y="552">Indi</text>
+          <text fill="#5C5C66" font-size="12.5" font-weight="400" letter-spacing="0" text-anchor="start" x="80" y="576">picks by</text>
+          <text fill="#5C5C66" font-size="12.5" font-weight="400" letter-spacing="0" text-anchor="start" x="80" y="594">prompt intent</text>
+          <line marker-end="url(#ah2)" stroke="#8E8E98" stroke-width="1.4" x1="212" x2="252" y1="566" y2="566"/>
+          <rect fill="#fff" height="120" stroke="#D5D5DA" stroke-width="1" width="280" x="268" y="506"/>
+          <text fill="#111114" font-size="14.5" font-weight="500" letter-spacing="0" text-anchor="start" x="286" y="534">News and announcement</text>
+          <rect fill="#FAFAFB" height="22" stroke="#D5D5DA" stroke-width="1" width="124" x="286" y="552"/>
+          <text fill="#5C5C66" font-size="12" font-weight="400" letter-spacing="0" text-anchor="start" x="296" y="568">Hero</text>
+          <rect fill="#FAFAFB" height="22" stroke="#D5D5DA" stroke-width="1" width="124" x="422" y="552"/>
+          <text fill="#5C5C66" font-size="12" font-weight="400" letter-spacing="0" text-anchor="start" x="432" y="568">Intro</text>
+          <rect fill="#FAFAFB" height="22" stroke="#D5D5DA" stroke-width="1" width="124" x="286" y="582"/>
+          <text fill="#5C5C66" font-size="12" font-weight="400" letter-spacing="0" text-anchor="start" x="296" y="598">Rich content</text>
+          <rect fill="#FAFAFB" height="22" stroke="#D5D5DA" stroke-width="1" width="124" x="422" y="582"/>
+          <text fill="#5C5C66" font-size="12" font-weight="400" letter-spacing="0" text-anchor="start" x="432" y="598">Related links</text>
+          <rect fill="#fff" height="120" stroke="#D5D5DA" stroke-width="1" width="280" x="568" y="506"/>
+          <text fill="#111114" font-size="14.5" font-weight="500" letter-spacing="0" text-anchor="start" x="586" y="534">Leadership hub</text>
+          <rect fill="#FAFAFB" height="22" stroke="#D5D5DA" stroke-width="1" width="124" x="586" y="552"/>
+          <text fill="#5C5C66" font-size="12" font-weight="400" letter-spacing="0" text-anchor="start" x="596" y="568">Hero</text>
+          <rect fill="#FAFAFB" height="22" stroke="#D5D5DA" stroke-width="1" width="124" x="722" y="552"/>
+          <text fill="#5C5C66" font-size="12" font-weight="400" letter-spacing="0" text-anchor="start" x="732" y="568">Message / video</text>
+          <rect fill="#FAFAFB" height="22" stroke="#D5D5DA" stroke-width="1" width="124" x="586" y="582"/>
+          <text fill="#5C5C66" font-size="12" font-weight="400" letter-spacing="0" text-anchor="start" x="596" y="598">Card grid</text>
+          <rect fill="#FAFAFB" height="22" stroke="#D5D5DA" stroke-width="1" width="124" x="722" y="582"/>
+          <text fill="#5C5C66" font-size="12" font-weight="400" letter-spacing="0" text-anchor="start" x="732" y="598">CTA</text>
+          <rect fill="#FAFAFB" height="120" stroke="#D5D5DA" stroke-width="1" width="260" x="880" y="506"/>
+          <text fill="#5C5C66" font-size="13.5" font-weight="400" letter-spacing="0" text-anchor="start" x="900" y="540">Same library.</text>
+          <text fill="#5C5C66" font-size="13.5" font-weight="400" letter-spacing="0" text-anchor="start" x="900" y="562">Different order.</text>
+          <text fill="#5C5C66" font-size="13.5" font-weight="400" letter-spacing="0" text-anchor="start" x="900" y="584">Nothing bespoke</text>
+          <text fill="#5C5C66" font-size="13.5" font-weight="400" letter-spacing="0" text-anchor="start" x="900" y="606">for the agent.</text>
+          <line stroke="#D5D5DA" x1="60" x2="1140" y1="672" y2="672"/>
+          <text fill="#8E8E98" font-size="11" font-weight="500" letter-spacing=".14em" text-anchor="start" x="60" y="706">WHY A NEW BLOCK NEEDS NO NEW RULE</text>
+          <rect fill="#fff" height="84" stroke="#D5D5DA" stroke-width="1" width="250" x="60" y="726"/>
+          <rect fill="#CFE6D6" height="5" stroke="none" stroke-width="1" width="250" x="60" y="726"/>
+          <text fill="#111114" font-size="14" font-weight="500" letter-spacing="0" text-anchor="start" x="78" y="760">A new block type</text>
+          <text fill="#5C5C66" font-size="13" font-weight="400" letter-spacing="0" text-anchor="start" x="78" y="782">is designed</text>
+          <line marker-end="url(#ah2)" stroke="#8E8E98" stroke-width="1.4" x1="318" x2="332" y1="768" y2="768"/>
+          <rect fill="#fff" height="84" stroke="#D5D5DA" stroke-width="1" width="250" x="340" y="726"/>
+          <rect fill="#F2E0B6" height="5" stroke="none" stroke-width="1" width="250" x="340" y="726"/>
+          <text fill="#111114" font-size="14" font-weight="500" letter-spacing="0" text-anchor="start" x="358" y="760">It joins the library</text>
+          <text fill="#5C5C66" font-size="13" font-weight="400" letter-spacing="0" text-anchor="start" x="358" y="782">on the token foundation</text>
+          <line marker-end="url(#ah2)" stroke="#8E8E98" stroke-width="1.4" x1="598" x2="612" y1="768" y2="768"/>
+          <rect fill="#fff" height="84" stroke="#D5D5DA" stroke-width="1" width="250" x="620" y="726"/>
+          <rect fill="#D9E9F2" height="5" stroke="none" stroke-width="1" width="250" x="620" y="726"/>
+          <text fill="#111114" font-size="14" font-weight="500" letter-spacing="0" text-anchor="start" x="638" y="760">It inherits the boundary</text>
+          <text fill="#5C5C66" font-size="13" font-weight="400" letter-spacing="0" text-anchor="start" x="638" y="782">automatically</text>
+          <line marker-end="url(#ah2)" stroke="#8E8E98" stroke-width="1.4" x1="878" x2="892" y1="768" y2="768"/>
+          <rect fill="#fff" height="84" stroke="#D5D5DA" stroke-width="1" width="250" x="900" y="726"/>
+          <rect fill="#E6E2F4" height="5" stroke="none" stroke-width="1" width="250" x="900" y="726"/>
+          <text fill="#111114" font-size="14" font-weight="500" letter-spacing="0" text-anchor="start" x="918" y="760">Editor and Indi get it</text>
+          <text fill="#5C5C66" font-size="13" font-weight="400" letter-spacing="0" text-anchor="start" x="918" y="782">on the same terms</text>
+          <text fill="#111114" font-size="15" font-weight="500" letter-spacing="0" text-anchor="start" x="60" y="862">This map, not a wireframe, is what the block library and the CMS editor were both built against.</text>
+        </svg>
+      </div>
+    </div>
+    <div class="split flip rv">
+      <div class="t">
+        <span class="beat-n">04 — Constraints</span>
+        <h2 class="h2">Four things that couldn’t move</h2>
+        <p class="body sm">
+          <strong>No pattern library to build from.</strong> Futures had no visual language of its own. The tokens and
+          foundations were shaped with our design system lead — my part was the block layer built on top of them, and
+          holding both to one shared vision so Futures still sat comfortably inside Unily’s wider brand.
+        </p>
+        <p class="body sm">
+          <strong>Accessibility was non-negotiable.</strong> Contrast, alt text and keyboard navigation had to hold
+          for every block, regardless of who — or what — configured it.
+        </p>
+        <p class="body sm">
+          <strong>Machine-checkable, not just well written.</strong> Every rule had to be explicit enough for the
+          Brand Identity Agent to verify programmatically.
+        </p>
+        <p class="body sm">
+          <strong>Blocks and editor UI had to ship together.</strong> The block schema and the CMS configuration
+          screens were designed in parallel, because neither could be validated in isolation from the other.
+        </p>
+      </div>
+      <div class="v">
+        <img class="shot" src="../assets/img/blocks/empty-section.webp" alt="The page editor with an empty section and the add-block panel open">
+      </div>
+    </div>
+    <div class="split rv">
+      <div class="t">
+        <span class="beat-n">05 — The system</span>
+        <h2 class="h2">Constraints, not options</h2>
+        <p class="body sm">
+          Min and max character ranges, capped grid counts, enforced image crops, required fields. The constraint
+          definitions were negotiated directly with the Indi/AI team so the Brand Identity Agent had something
+          concrete to check against from day one, and early block and editor concepts were tested with prospective CMS
+          editors ahead of general availability.
+        </p>
+        <p class="body sm">
+          What came out: hero blocks that auto-adjust image crop and headline size to content length. Card grids that
+          reflow 4 → 2 → 1 and cap their own card count to keep grids balanced. Feature banners with a fixed headline
+          and body character range, so the layout can’t be broken from inside the CMS.
+        </p>
+        <p class="body sm"></p>
+      </div>
+      <div class="v">
+        <video class="shot" poster="../assets/video/portal-blocks-constraints-poster.jpg" autoplay="" controls="" loop="" muted="" playsinline="" preload="metadata">
+          <source src="../assets/video/portal-blocks-constraints.webm" type="video/webm">
+          <source src="../assets/video/portal-blocks-constraints.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <div class="split flip rv">
+      <div class="t">
+        <span class="beat-n">06 — Templates</span>
+        <h2 class="h2">Derived from real pages, not invented</h2>
+        <p class="body sm">
+          Rather than design one idealised template, I audited live client pages across the platform to find the page
+          types that already existed in practice, then codified the working patterns into a small library of reference
+          templates.
+        </p>
+        <p class="body sm">
+          Four recurred: news and announcements, leadership hubs, team and department landings, and campaign or event
+          pages. Indi selects between them by prompt intent rather than forcing every page through the same shape —
+          and the campaign template shares its structure with the Events object model.
+        </p>
+      </div>
+      <div class="v">
+        <div class="scroller">
+          <img src="../assets/img/blocks/campaign-page.webp" alt="A full campaign page assembled from blocks">
+          <div class="track">
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="split rv">
+      <div class="t">
+        <span class="beat-n">07 — The unconventional bit</span>
+        <h2 class="h2">The one place I broke the pattern</h2>
+        <p class="body sm">
+          A block library is, by definition, a set of rules — and rules are where enterprise software goes to become
+          boring. The empty state was the place worth spending the deviation on: abstract animated placeholders that
+          show the layout ratio and block type, instead of a grey rectangle with an icon in it.
+        </p>
+        <p class="body sm">
+          It earns its place twice. An editor reads the structure of a page before any content exists, and the dullest
+          screen in the product gets the one bit of motion it was allowed. Not novelty for its own sake — the one
+          moment that could carry it without destabilising the system around it.
+        </p>
+      </div>
+      <div class="v">
+        <img class="shot" src="../assets/img/blocks/block-placeholders.gif" alt="Animated block placeholders">
+      </div>
+    </div>
+    <div class="pull rv">
+      <span class="beat-n">08 — The call I’d defend</span>
+      <h2 class="h2">One shared library, not a separate set for the AI</h2>
+      <p class="body sm">
+        A lightweight AI-only block set was faster to ship and would have fragmented the design system permanently —
+        two libraries, two maintenance costs, drift within a quarter. Catching bad AI-generated pages in design
+        review was the other option, and it doesn’t scale past a handful of pages. It also contradicts the promise
+        of an instant prompt-to-page flow.
+      </p>
+      <p class="body sm">
+        One library used by both. Explicit constraints instead of open fields. And an agent that checks its own
+        output against documented principles, rather than a human doing it after the fact.
+      </p>
+      <figure class="fig">
+        <img class="shot" src="../assets/img/blocks/people-card-variations.webp" alt="Figma board of people card variations, CMS configuration and block layouts across list and grid">
+        <figcaption>
+          One card, every variation and CMS configuration in one place — compact and featured, list and grid, with the
+          metadata options that stayed in scope and the ones that were ruled out. One library, so a decision made here
+          holds for everything built on it.
+        </figcaption>
+      </figure>
+    </div>
+    <div class="beat rv">
+      <span class="beat-n">09 — Outcome</span>
+      <h2 class="h2">Design review started asking a different question</h2>
+      <p class="body sm">
+        <ul class="w">
+          <li>Page build time down ~40%, with fewer review rounds.</li>
+          <li>
+            Fewer reviews asking “does this look right”, more asking for genuinely new blocks — the clearest sign the
+            constraints were holding without editors or Indi having to be told the rules.
+          </li>
+          <li>
+            Now the foundation under every client build on Futures, and the system Communities is built on.
+          </li>
+        </ul>
+      </p>
+      <p class="body sm">
+        Because this was a 0 to 1 build, the block library and the CMS configuration UI were designed against the
+        token foundations as one connected thing rather than left to evolve separately — and the Indi principles and
+        reference templates were written as versioned documentation alongside them from the start.
+      </p>
+    </div>
+    <div class="beat rv">
+      <span class="beat-n">Before / after</span>
+      <h2 class="h2">The same page, either side of the system</h2>
+      <p class="body sm">
+        Before is the earlier generation of the product: a home page assembled from fixed widgets in a fixed order —
+        a carousel, a row of news, a column of feeds. After is Futures, where the same kind of page is composed
+        section by section from blocks, by an editor or by Indi, against the token foundations underneath.
+      </p>
+      <figure class="ba">
+        <div class="ba-stage" style="--p:50%">
+          <img src="../assets/img/blocks/portal-after.webp" alt="A Futures home page assembled from blocks">
+          <div class="ba-clip">
+            <img src="../assets/img/blocks/portal-before.webp" alt="A home page on the earlier product, built from fixed widgets">
+          </div>
+          <input class="ba-range" type="range" aria-label="Reveal the portal before and after" max="100" min="0" step="1" value="50">
+          <div class="ba-line">
+            <div class="ba-knob">
+              ‹›
+            </div>
+          </div>
+          <span class="ba-tag l">Before</span>
+          <span class="ba-tag r">After</span>
+        </div>
+        <figcaption>
+          Drag the handle — or use the arrow keys — to compare. Both are demonstration sites, cropped to the same
+          depth of page.
+        </figcaption>
+      </figure>
+    </div>
+    <div class="reflect rv">
+      <span class="beat-n">10 — Reflection</span>
+      <div class="cols">
+        <div>
+          <h3 class="h3">What I got wrong</h3>
+          <div class="stickies">
+            <div class="sticky">
+              Early block versions still allowed enough open-ended configuration that Indi produced technically valid but visually inconsistent pages. The constraints needed another pass before they held.
+            </div>
+            <div class="sticky">
+              Designing the schema and the editor UI in parallel meant field names and groupings were reworked more than once as the schema stabilised.
+            </div>
+            <div class="sticky">
+              The line between system-controlled and editor-configurable took several rounds, once real usage surfaced friction neither audience had flagged upfront.
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="h3">What happens next</h3>
+          <div class="stickies">
+            <div class="sticky">
+              Give Indi a feedback loop, so it can flag when prompts keep pushing at a template’s edges.
+            </div>
+            <div class="sticky">
+              Grow the template library beyond the most common page types, as client usage data comes in.
+            </div>
+            <div class="sticky">
+              Teach Indi to blend two templates when a prompt spans page types, rather than forcing the nearest fit.
+            </div>
+            <div class="sticky">
+              Extend the model to adjacent surfaces, so it reaches platform-wide rather than staying scoped to Futures.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nextnav rv">
+      <a href="../work/notifications.html">
+        <span class="eyebrow block">Next project</span>
+        <h3 class="h3">Notifications →</h3>
+      </a>
+      <a href="mailto:roksanatruszkowska@outlook.com">
+        <span class="eyebrow block">Say hello</span>
+        <h3 class="h3">Get in touch →</h3>
+      </a>
+    </div>
+  </div>
+  <footer>
+    <div class="wrap">
+      <div class="foot-top">
+        <h2 class="h2">Thanks for scrolling.</h2>
+        <div class="foot-links">
+          <a class="lnk" href="mailto:roksanatruszkowska@outlook.com">roksanatruszkowska@outlook.com</a>
+          <a class="lnk" href="https://www.linkedin.com/in/roksana-truszkowska-4886b31b8/" rel="noopener" target="_blank">
+            LinkedIn
+          </a>
+          <a class="lnk" href="../index.html">Back to work</a>
+        </div>
+      </div>
+      <div class="foot-bot">
+        <span>Roksana Truszkowska — Product Designer</span>
+        <span>© 2026</span>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<script src="../assets/js/main.js" defer></script>
+<script src="../assets/js/stickers.js" defer></script>
+</body>
+</html>

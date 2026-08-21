@@ -1,0 +1,91 @@
+/* ============================================================
+   Base — reset, document defaults, typography primitives
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--txt);
+  font-family: var(--sans);
+  font-size: var(--fs-body);
+  font-weight: 300;
+  line-height: var(--lh-body);
+  letter-spacing: -.002em;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a   { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+::selection { background: #111114; color: #fff; }
+
+/* --- headings ---------------------------------------------- */
+h1, h2, h3, h4 {
+  margin: 0;
+  color: var(--txt);
+  font-family: var(--disp);
+  font-weight: 500;
+  letter-spacing: -.028em;
+  line-height: 1.14;
+}
+
+.display { font-size: var(--fs-display); letter-spacing: -.035em; line-height: 1.08; }
+.h2      { font-size: var(--fs-h2);      letter-spacing: -.03em; }
+.h3      { font-size: var(--fs-h3);      letter-spacing: -.022em; }
+.h4      { font-size: var(--fs-h4);      letter-spacing: -.015em; }
+
+/* --- body copy ---------------------------------------------- */
+p { margin: 0 0 1.05rem; }
+
+.lede {
+  max-width: var(--measure-lede);
+  color: var(--mut);
+  font-size: 1.02rem;
+  font-weight: 300;
+  line-height: var(--lh-copy);
+}
+
+.body {
+  max-width: var(--measure-body);
+  color: var(--mut);
+  line-height: var(--lh-copy);
+}
+
+.sm { font-size: var(--fs-sm); }
+
+.eyebrow {
+  color: var(--faint);
+  font-size: var(--fs-eyebrow);
+  font-weight: 400;
+  letter-spacing: .01em;
+}
+
+/* An eyebrow above a heading always sits on its own line. */
+.eyebrow.block { display: block; margin-bottom: .5rem; }
+
+em { color: var(--txt); font-style: italic; }
+
+ul.w {
+  margin: 0 0 1.1rem;
+  padding-left: 1.1rem;
+  max-width: var(--measure-lede);
+  color: var(--mut);
+}
+ul.w li { margin-bottom: .5rem; }
+
+/* --- links -------------------------------------------------- */
+.lnk {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1px;
+  transition: border-color .2s;
+}
+.lnk:hover { border-color: var(--txt); }
+
+.arrow { color: var(--mut); font-size: .88rem; transition: color .2s; }
+.arrow em { display: inline-block; font-style: normal; transition: transform .25s; }
+
+:focus-visible { outline: 2px solid var(--txt); outline-offset: 3px; }

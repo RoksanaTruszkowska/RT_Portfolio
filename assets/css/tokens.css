@@ -1,0 +1,72 @@
+/* ============================================================
+   Design tokens
+   The single place where colour, type and spacing are decided.
+   Change a value here and it propagates through every stylesheet.
+   ============================================================ */
+
+:root {
+  /* --- colour ------------------------------------------------
+     Monochrome by design: the work supplies the colour.        */
+  --bg:            #FFFFFF;
+  --txt:           #111114;
+  --mut:           #6B6B73;   /* body copy, secondary text      */
+  --faint:         #A0A0A8;   /* eyebrows, captions, meta       */
+  --line:          rgba(17, 17, 20, .11);   /* every hairline   */
+  --line-strong:   rgba(17, 17, 20, .2);    /* dashed WIP panel */
+  --grid-line:     rgba(17, 17, 20, .045);  /* faint square grid   */
+  --dot:           rgba(17, 17, 20, .17);   /* hero dot grid       */
+  --grid-cell:     32px;   /* grid square size                    */
+  --grid-depth:    1240px; /* how far down the page the grid runs */
+
+  /* Sticky notes — the one place pigment is allowed.
+     Hats run apricot → lilac; reflections stay yellow.         */
+  --note-ink:      #3B3A31;
+  --note-ink-head: #2C2B22;
+  --note-yellow:   #FAF3D4;
+  --note-yellow-2: #F8F0CB;
+  --note-yellow-3: #FBF5DC;
+  --hat-1: #F3D2A6;
+  --hat-2: #F2E0B6;
+  --hat-3: #E4E6BE;
+  --hat-4: #CFE6D6;
+  --hat-5: #D9E9F2;
+  --hat-6: #E6E2F4;
+
+  /* Sticker illustrations (decorative SVGs, see js/stickers.js) */
+  --stk-navy:   #12141C;
+  --stk-orange: #FF5A1F;
+
+  /* --- type --------------------------------------------------- */
+  --disp: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --sans: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+
+  --fs-body:    15.4px;
+  --lh-body:    1.72;
+  --lh-copy:    1.78;   /* .lede and .body run slightly looser   */
+  --fs-display: clamp(2rem, 4.2vw, 3.2rem);
+  --fs-h2:      clamp(1.3rem, 2.1vw, 1.75rem);
+  --fs-h3:      1.12rem;
+  --fs-h4:      1rem;
+  --fs-sm:      .92rem;
+  --fs-xs:      .82rem;
+  --fs-eyebrow: .76rem;
+
+  /* --- layout ------------------------------------------------- */
+  --content-max: 1080px;
+  --gutter:      2.5rem;   /* .wrap side padding, desktop        */
+  --gutter-s:    1.4rem;   /* .wrap side padding, mobile         */
+  --section-y:   6rem;     /* vertical section rhythm            */
+  --section-y-s: 4rem;
+  --col-gap:     3.5rem;   /* every two-column split             */
+  --beat-y:      3.5rem;   /* padding above/below a case-study beat */
+
+  /* Measures — line lengths, kept deliberately short.           */
+  --measure-lede: 56ch;
+  --measure-body: 54ch;
+  --measure-beat: 62ch;    /* full-width beats can run wider     */
+  --measure-pull: 64ch;
+
+  /* --- motion ------------------------------------------------- */
+  --reveal-dur: .7s;
+  --ease:       ease;
+}

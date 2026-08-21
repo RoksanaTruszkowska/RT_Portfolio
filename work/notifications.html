@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Notifications — Roksana Truszkowska</title>
+<meta name="description" content="Rebuilding notifications on an enterprise platform: eight problems, one strategy, three sequenced releases.">
+<meta property="og:title" content="Notifications — Roksana Truszkowska">
+<meta property="og:description" content="Rebuilding notifications on an enterprise platform: eight problems, one strategy, three sequenced releases.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500&family=Poppins:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/layout.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/case-study.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+
+<nav class="nav" id="nav">
+  <div class="in">
+    <a class="brand" href="../index.html">Roksana Truszkowska</a>
+    <div class="links">
+      <a class="hide-s" href="../index.html#work">Work</a>
+      <a class="hide-s" href="../index.html#about">About</a>
+      <a href="mailto:roksanatruszkowska@outlook.com">Email</a>
+    </div>
+  </div>
+</nav>
+
+<main class="cs-notifications cs-grid" id="content">
+  <div class="stickers" aria-hidden="true">
+    <div class="stk" data-anchor="self" data-drift=".10" data-left="3.5%" data-rotate="-10" data-shape="bell" data-top="4%" data-width="76">
+    </div>
+    <div class="stk" data-anchor="self" data-drift="-.11" data-right="2.5%" data-rotate="9" data-top="3%" data-word="quiet hours">
+    </div>
+    <div class="stk" data-anchor="self" data-drift="-.10" data-right="3%" data-rotate="10" data-shape="envelope" data-top="18%" data-width="78">
+    </div>
+    <div class="stk" data-anchor="self" data-drift=".09" data-left="3%" data-rotate="-8" data-shape="moon" data-top="31%" data-width="68">
+    </div>
+    <div class="stk" data-anchor="self" data-drift="-.08" data-left="2.5%" data-rotate="7" data-top="46%" data-word="not relevant">
+    </div>
+    <div class="stk" data-anchor="self" data-drift=".07" data-right="2%" data-rotate="0" data-top="58%" data-width="88">
+      <img src="../assets/img/stickers/bubble.webp" alt="">
+    </div>
+    <div class="stk" data-anchor="self" data-drift=".11" data-left="3%" data-rotate="12" data-shape="sparkle" data-top="72%" data-width="62">
+    </div>
+    <div class="stk" data-anchor="self" data-drift="-.10" data-right="3.5%" data-rotate="-9" data-shape="comment" data-top="87%" data-width="74">
+    </div>
+  </div>
+  <header class="cs-hero">
+    <div class="wrap">
+      <span class="eyebrow rv">Case study — end to end</span>
+      <h1 class="display rv">What to ship first when everything is broken</h1>
+      <p class="lede rv">
+        A ground-up redesign of the platform’s notification experience, from a flat tray nobody trusted to a
+        context-aware system that decides what to send, when, and to which device. Sequenced across three releases —
+        because the users who most needed the ambitious version were the ones angriest about the basics.
+      </p>
+    </div>
+  </header>
+  <div class="wrap">
+    <div class="rv">
+      <video class="shot rv" poster="../assets/video/notifications-tray-poster.jpg" autoplay="" controls="" loop="" muted="" playsinline="" preload="metadata">
+        <source src="../assets/video/notifications-tray.webm" type="video/webm">
+        <source src="../assets/video/notifications-tray.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="cs-meta rv">
+      <div>
+        <div class="mrow">
+          <span>Role</span>
+          <span>Product Designer</span>
+        </div>
+        <div class="mrow">
+          <span>Platforms</span>
+          <span>Intranet, desktop tray, mobile push, email</span>
+        </div>
+        <div class="mrow">
+          <span>Scope</span>
+          <span>Research synthesis, service blueprint, IA and settings, delivery strategy</span>
+        </div>
+      </div>
+      <div>
+        <div class="tile">
+          <div class="n">
+            8
+          </div>
+          <div class="l">
+            distinct problems, resolved by one strategy rather than eight fixes
+          </div>
+        </div>
+        <div class="tile">
+          <div class="n">
+            3
+          </div>
+          <div class="l">
+            releases, sequenced — visible win, then reliability, then intelligence
+          </div>
+        </div>
+        <div class="tile">
+          <div class="n">
+            4
+          </div>
+          <div class="l">
+            measures set before build: tray engagement, dismiss rate, settings completion, support tickets
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="split rv open">
+      <div class="t">
+        <span class="beat-n">01 — The problem</span>
+        <h2 class="h2">A productivity tax nobody was measuring</h2>
+        <p class="body sm">
+          Notifications keep employees informed, and unmanaged they systematically destroy the focus that makes the
+          information useful. Employees are interrupted every 10 to 30 minutes — more than 160 disruptions a week —
+          and 77% report finding notifications distracting. Each interruption costs roughly 23 minutes of recovery.
+        </p>
+        <p class="body sm">
+          On our own platform it was worse than generic overload. Users couldn’t tell what a notification referred to
+          or why they’d received it. Duplicates arrived for the same event. The tray didn’t refresh, so nobody trusted
+          it. A security alert looked identical to a comment on a post. And everything arrived in English, on a
+          platform serving organisations with employees speaking 26 or more languages.
+        </p>
+        <p class="body sm">
+          Underneath all of it, something more corrosive. One piece of stakeholder feedback read simply: <em>“Isn’t
+          this a REALLY old ideation (3+ years)?”</em> Clients evaluating whether to migrate away were citing
+          notifications as a decision factor. This wasn’t only a design problem about interruption. It was a
+          credibility problem about delivery.
+        </p>
+      </div>
+      <div class="v">
+        <div class="notewall">
+          <div class="sticky">
+            <h3 class="h4">Frustration & expectations</h3>
+            <ul>
+              <li>“Isn’t this a REALLY old ideation (3+ years)?”</li>
+              <li>C-level asking for it by name</li>
+              <li>Clients cite it when they weigh up leaving</li>
+            </ul>
+            <span class="opp"><b>→</b> A visible roadmap, and quick wins.</span>
+          </div>
+          <div class="sticky">
+            <h3 class="h4">Noise & duplicates</h3>
+            <ul>
+              <li>Two notifications for one event</li>
+              <li>No grouping — trays overwhelm</li>
+              <li>Still there after you’ve actioned it</li>
+            </ul>
+            <span class="opp"><b>→</b> Group, dedupe, clear what’s done.</span>
+          </div>
+          <div class="sticky">
+            <h3 class="h4">Control</h3>
+            <ul>
+              <li>Digest cadence, site-level config</li>
+              <li>Hours that follow your time zone</li>
+              <li>Quiet hours: a legal requirement in some countries</li>
+            </ul>
+            <span class="opp"><b>→</b> Do not disturb, quiet hours, scheduled digests.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="split flip rv">
+      <div class="t">
+        <span class="beat-n">02 — Research</span>
+        <h2 class="h2">Three streams that would each have given a different answer alone</h2>
+        <p class="body sm">
+          <strong>Academic work on interruption.</strong> Mid-task interruptions cause the largest performance hit,
+          increasing both completion time and error rates. Real-time notifications reduce deep work. Batched hourly
+          digests improve focus.
+        </p>
+        <p class="body sm">
+          <strong>Market and competitive analysis.</strong> Five patterns recurred outside the intranet category:
+          bundling, context-aware timing, relevance filtering, wellbeing controls, and actionability from within the
+          notification itself.
+        </p>
+        <p class="body sm">
+          <strong>Internal user and stakeholder research.</strong> Seven themes, the seventh of which was really about
+          trust — frustration at the pace of progress.
+        </p>
+        <p class="body sm">
+          The counterintuitive finding is the one that shaped everything: <em>turning notifications off doesn’t
+          work.</em> Silence triggers fear of missing out and compulsive self-checking. The effective interventions
+          are batching, context-aware timing and user control. Moderation, not removal.
+        </p>
+      </div>
+      <div class="v">
+        <img class="shot" src="../assets/img/notifications/discovery-board.webp" alt="Discovery board showing three research streams">
+      </div>
+    </div>
+    <div class="split rv">
+      <div class="t">
+        <span class="beat-n">03 — Framing</span>
+        <h2 class="h2">Eight problems, and one that makes the others worse</h2>
+        <p class="body sm">
+          Rather than carry seven research themes into design, I wrote eight problem statements, each with a user
+          story and a set of How Might We questions — so the team was solving stated problems rather than reacting to
+          feedback.
+        </p>
+        <p class="body sm">
+          Problem 8 was notification settings themselves: so numerous that nobody ever personalised anything. It
+          matters most because every fix for problems 1 through 7 is tempting to solve with another setting, and each
+          new setting makes 8 worse. Naming it early is what stopped the design defaulting to configuration.
+        </p>
+        <p class="body sm">
+          One more reframe changed the priority order. Notifications sent outside working hours carry real financial
+          exposure in right-to-disconnect jurisdictions — so quiet hours weren’t a wellbeing nice-to-have but a
+          compliance requirement with a business case attached. That is what got it prioritised.
+        </p>
+      </div>
+      <div class="v">
+        <img class="shot" src="../assets/img/notifications/hmw-ideation.webp" alt="Problem statements with How Might We questions and ideation">
+      </div>
+    </div>
+    <div class="split flip rv">
+      <div class="t">
+        <span class="beat-n">04 — The system</span>
+        <h2 class="h2">A notification that chases you, rather than broadcasting at you</h2>
+        <p class="body sm">
+          The core mechanic is a delivery ladder. It goes to the desktop tray first, if you’re there. Unopened, it
+          escalates to mobile push. Still ignored and important enough, it becomes an email with a clear call to
+          action.
+        </p>
+        <p class="body sm">
+          That ladder is what makes moderation possible: because the system can escalate when something is genuinely
+          urgent, it can afford to stay quiet about everything else.
+        </p>
+        <p class="body sm">
+          Four services sit behind it, none visible to the user — a timing engine that learns engagement patterns and
+          avoids meetings and deep focus, presence detection that identifies which device is actually in use, channel
+          orchestration that handles escalation, and an analytics feedback loop that refines both over time.
+        </p>
+      </div>
+      <div class="v">
+        <img class="shot" src="../assets/img/notifications/service-blueprint.webp" alt="Service blueprint across evidence, customer, frontstage, backstage and support layers">
+      </div>
+    </div>
+    <div class="split rv">
+      <div class="t">
+        <span class="beat-n">05 — A day in the life</span>
+        <h2 class="h2">The settings problem, solved by never opening settings</h2>
+        <p class="body sm">
+          Morning: Alex logs in on desktop. The system has learnt he checks notifications then, so a news item on a
+          topic he follows arrives there. He reads it; it never escalates.
+        </p>
+        <p class="body sm">
+          Lunch: a critical system alert fires. Tray first. No click within five minutes, so it escalates to push.
+          Still ignored, it becomes an email.
+        </p>
+        <p class="body sm">
+          Afternoon: he sets Do Not Disturb for deep work, one till three. Likes, comments and FYIs queue rather than
+          send. At three he gets one grouped digest of what he missed, on whichever device he’s actually using.
+        </p>
+        <p class="body sm">
+          Later, a community post is irrelevant to him. He marks it “not relevant”, which trains the system to
+          deprioritise similar content. He never opens settings — preference-setting becomes a by-product of use
+          rather than a configuration task.
+        </p>
+      </div>
+      <div class="v">
+        <img class="shot" src="../assets/img/notifications/storyboard.webp" alt="Six-panel storyboard of one user's notification journey through a day">
+      </div>
+    </div>
+    <div class="split flip rv">
+      <div class="t">
+        <span class="beat-n">06 — Sequencing</span>
+        <h2 class="h2">The visionary version would have meant another long silence</h2>
+        <p class="body sm">
+          The research pointed at an ambitious system: context-aware timing, AI escalation, behavioural learning.
+          Correct destination, long build. Meanwhile the loudest feedback was about things that were simply broken — a
+          tray that didn’t refresh, confusing read states, a modal that blocked the workspace. Users had been raising
+          those for three years.
+        </p>
+        <p class="body sm">
+          So I split the strategy into three independently releasable parts. <strong>V1 — layout and
+          placement:</strong> move the tray from a centre-screen modal to a right-hand panel matching the pattern
+          people already know from Teams and Slack. No backend work, visible the day it ships. <strong>V2 —
+          reliability and comprehension:</strong> auto-refresh, consistent read states, bulk actions, context labels,
+          error handling, accessibility and performance. <strong>V3 — intelligence:</strong> the timing engine,
+          presence detection, orchestration, digests and multilingual delivery.
+        </p>
+        <p class="body sm">
+          The argument made to stakeholders was that V1 buys back the credibility that makes V3 fundable. A low-risk,
+          high-visibility release proves movement to an audience that had concluded there wouldn’t be any.
+        </p>
+      </div>
+      <div class="v">
+        <img class="shot" src="../assets/img/notifications/v1-strategy.webp" alt="V1 Basic Reskin strategy: functionality, pain point, proposed solution and value">
+      </div>
+    </div>
+    <div class="pull rv">
+      <span class="beat-n">07 — The call I’d defend</span>
+      <h2 class="h2">Smart defaults and in-line feedback, not more settings</h2>
+      <p class="body sm">
+        Giving users granular control over every notification type was the obvious answer, and it would have made
+        the eighth problem worse — every new control makes configuration less likely to happen at all.
+      </p>
+      <p class="body sm">
+        Instead: smart defaults, plus a “not relevant” action inline in the notification itself. Preferences get
+        learnt from behaviour rather than configured in a settings screen nobody opens.
+      </p>
+    </div>
+    <div class="beat rv">
+      <span class="beat-n">08 — Where it stands</span>
+      <h2 class="h2">What shipped, and what it’s judged on</h2>
+      <p class="body sm">
+        This is a sequenced release rather than a finished product, and the numbers that matter aren’t all in yet.
+      </p>
+      <p class="body sm">
+        The measures worth tracking were set upfront: tray engagement and open rate, dismiss rate,
+        settings-completion rate, and notification-related support ticket volume before and after.
+      </p>
+      <p class="body sm">
+        The strongest qualitative signal available is probably a client one — notifications were being cited as a
+        migration risk, so a changed client conversation is worth more here than an engagement percentage.
+      </p>
+    </div>
+    <div class="beat rv">
+      <span class="beat-n">The interface</span>
+      <h2 class="h2">What the tray does now</h2>
+      <div class="trio">
+        <figure>
+          <img class="raised" src="../assets/img/notifications/tray-grouped.webp" alt="Community updates grouped into one expandable notification">
+          <figcaption>
+            Updates from several communities collapse into one entry, expandable in place.
+          </figcaption>
+        </figure>
+        <figure>
+          <img class="raised" src="../assets/img/notifications/tray-read.webp" alt="The read tab of the notification tray">
+          <figcaption>Read notifications keep their own tab, with upload and review outcomes.</figcaption>
+        </figure>
+        <figure>
+          <img class="raised" src="../assets/img/notifications/tray-settings.webp" alt="Notification settings: types grouped by category, each with tray, push and email switches">
+          <figcaption>
+            Settings stay short: types grouped by category, each switchable per channel.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="beat rv">
+      <span class="beat-n">Before / after</span>
+      <h2 class="h2">The same inbox, either side of the redesign</h2>
+      <p class="body sm">
+        Before, every event produced the same line. A hundred of them, undifferentiated, ordered by nothing but age,
+        with dismiss-all as the only realistic action. After, five unread: sorted by type, grouped where they belong
+        together, and the one that actually needs a decision sitting at the top of the list.
+      </p>
+      <div class="beforeafter">
+        <figure>
+          <span class="step">Before</span>
+          <img class="raised" src="../assets/img/notifications/tray-before.webp" alt="The old notifications dialog: a hundred identical rows">
+          <figcaption>A hundred identical rows, and one button that clears the lot.</figcaption>
+        </figure>
+        <div class="mark" aria-hidden="true">
+          →
+        </div>
+        <figure>
+          <span class="step">After</span>
+          <img class="raised" src="../assets/img/notifications/tray-unread.webp" alt="The redesigned notification tray: five unread, sorted by type">
+          <figcaption>Five unread, sorted by type, with actions on the notification itself.</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="reflect rv">
+      <span class="beat-n">09 — Reflection</span>
+      <div class="cols">
+        <div>
+          <h3 class="h3">What I got wrong</h3>
+          <div class="stickies">
+            <div class="sticky">
+              The research was extremely broad — three streams, eight problem statements. Worth asking whether that delayed a decision the user feedback alone could have supported earlier.
+            </div>
+            <div class="sticky">
+              Accessibility landed in the Medium tier rather than V1 — the sequencing call I would most expect to be challenged on.
+            </div>
+            <div class="sticky">
+              Multilingual support was one of the strongest themes in the research and still sits in V3 — the distance between what research surfaced and what the sequence could carry.
+            </div>
+            <div class="sticky">
+              V3 depends on presence detection and behavioural learning that need real usage data to be any good. Was that dependency sized honestly at sign-off?
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="h3">What happens next</h3>
+          <div class="stickies">
+            <div class="sticky">
+              V3 delivery — the timing engine, presence detection and the analytics loop that turn the ladder from a fixed rule into learned behaviour.
+            </div>
+            <div class="sticky">
+              Multilingual notifications respecting user profile language — a direct blocker to adoption in global organisations.
+            </div>
+            <div class="sticky">
+              Proactive discovery: trending and “you might have missed” digests, balanced against the overload this set out to reduce.
+            </div>
+            <div class="sticky">
+              Measurement — open, click-through and dismiss rates, so the next iteration is tuned on evidence rather than feedback volume.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nextnav rv">
+      <a href="../work/events.html">
+        <span class="eyebrow block">Next project</span>
+        <h3 class="h3">Events →</h3>
+      </a>
+      <a href="mailto:roksanatruszkowska@outlook.com">
+        <span class="eyebrow block">Say hello</span>
+        <h3 class="h3">Get in touch →</h3>
+      </a>
+    </div>
+  </div>
+  <footer>
+    <div class="wrap">
+      <div class="foot-top">
+        <h2 class="h2">Thanks for scrolling.</h2>
+        <div class="foot-links">
+          <a class="lnk" href="mailto:roksanatruszkowska@outlook.com">roksanatruszkowska@outlook.com</a>
+          <a class="lnk" href="https://www.linkedin.com/in/roksana-truszkowska-4886b31b8/" rel="noopener" target="_blank">
+            LinkedIn
+          </a>
+          <a class="lnk" href="../index.html">Back to work</a>
+        </div>
+      </div>
+      <div class="foot-bot">
+        <span>Roksana Truszkowska — Product Designer</span>
+        <span>© 2026</span>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<script src="../assets/js/main.js" defer></script>
+<script src="../assets/js/stickers.js" defer></script>
+</body>
+</html>

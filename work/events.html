@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Events — Roksana Truszkowska</title>
+<meta name="description" content="Five use cases forced through one content model designed for none of them. Events, rebuilt as a first-class platform object.">
+<meta property="og:title" content="Events — Roksana Truszkowska">
+<meta property="og:description" content="Five use cases forced through one content model designed for none of them. Events, rebuilt as a first-class platform object.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500&family=Poppins:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/layout.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/case-study.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+
+<nav class="nav" id="nav">
+  <div class="in">
+    <a class="brand" href="../index.html">Roksana Truszkowska</a>
+    <div class="links">
+      <a class="hide-s" href="../index.html#work">Work</a>
+      <a class="hide-s" href="../index.html#about">About</a>
+      <a href="mailto:roksanatruszkowska@outlook.com">Email</a>
+    </div>
+  </div>
+</nav>
+
+<main class="cs-events cs-grid" id="content">
+  <div class="stickers" aria-hidden="true">
+    <div class="stk" data-anchor="self" data-drift=".10" data-left="3.5%" data-rotate="-10" data-shape="calendar" data-top="4%" data-width="78">
+    </div>
+    <div class="stk" data-anchor="self" data-drift="-.11" data-right="2.5%" data-rotate="9" data-top="3%" data-word="RSVP">
+    </div>
+    <div class="stk" data-anchor="self" data-drift="-.10" data-right="3%" data-rotate="10" data-shape="pin" data-top="18%" data-width="70">
+    </div>
+    <div class="stk" data-anchor="self" data-drift=".09" data-left="3%" data-rotate="-8" data-shape="clock" data-top="31%" data-width="68">
+    </div>
+    <div class="stk" data-anchor="self" data-drift="-.08" data-left="2.5%" data-rotate="7" data-top="46%" data-word="publish quietly">
+    </div>
+    <div class="stk" data-anchor="self" data-drift=".07" data-right="2%" data-rotate="0" data-top="58%" data-width="88">
+      <img src="../assets/img/stickers/bubble.webp" alt="">
+    </div>
+    <div class="stk" data-anchor="self" data-drift=".11" data-left="3%" data-rotate="12" data-shape="sparkle" data-top="72%" data-width="62">
+    </div>
+    <div class="stk" data-anchor="self" data-drift="-.10" data-right="3.5%" data-rotate="-9" data-shape="smiley" data-top="87%" data-width="74">
+    </div>
+  </div>
+  <header class="cs-hero">
+    <div class="wrap">
+      <span class="eyebrow rv">Case study — object model and end-to-end flows</span>
+      <h1 class="display rv">From content workaround to first-class capability</h1>
+      <p class="lede rv">
+        Rebuilding how the platform represents time-based moments, so employees recognise an Event on sight and
+        organisers never touch a workaround again.
+      </p>
+    </div>
+  </header>
+  <div class="wrap">
+    <div class="rv">
+      <video class="shot rv" poster="../assets/video/events-creation-poster.jpg" autoplay="" controls="" loop="" muted="" playsinline="" preload="metadata">
+        <source src="../assets/video/events-creation.webm" type="video/webm">
+        <source src="../assets/video/events-creation.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="cs-meta rv">
+      <div>
+        <div class="mrow">
+          <span>Role</span>
+          <span>Product Designer</span>
+        </div>
+        <div class="mrow">
+          <span>Team</span>
+          <span>1 PM, Engineering, Data/Analytics</span>
+        </div>
+        <div class="mrow">
+          <span>Platforms</span>
+          <span>Intranet CMS and front-end, Outlook integration</span>
+        </div>
+        <div class="mrow">
+          <span>Scope</span>
+          <span>Object model, recurrence architecture, creator and end-user flows</span>
+        </div>
+      </div>
+      <div>
+        <div class="tile">
+          <div class="n">
+            5 → 1
+          </div>
+          <div class="l">
+            use cases forced through one generic content model
+          </div>
+        </div>
+        <div class="tile">
+          <div class="n">
+            Cycle 1
+          </div>
+          <div class="l">
+            in build — the numbers below are the bar, not results
+          </div>
+        </div>
+        <div class="tile">
+          <div class="n">
+            0
+          </div>
+          <div class="l">
+            architecture blockers, confirmed against the future roadmap
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="split rv open">
+      <div class="t">
+        <span class="beat-n">01 — The problem</span>
+        <h2 class="h2">A model designed for none of it</h2>
+        <p class="body sm">
+          Employees couldn’t reliably tell what an Event was or what it expected of them. Organisers couldn’t run one
+          end to end without leaving the platform.
+        </p>
+        <p class="body sm">
+          Underneath both was a structural problem: Events were being forced through a generic content model never
+          designed to hold them. That showed up as heavy reliance on external calendar tools, repeated requests for
+          recurring and cultural moments the platform had no category for, and mounting engineering friction every
+          time the model was stretched.
+        </p>
+        <p class="body sm">
+          Discovery found one model standing in for five use cases — one-off meetings, leadership broadcasts, cultural
+          moments, training sessions and compliance deadlines. Workarounds weren’t the exception, they were the norm.
+        </p>
+      </div>
+      <div class="v">
+        <img class="shot" src="../assets/img/events/old-event-page-wide.webp" alt="The old event page: a content page wearing a date">
+      </div>
+    </div>
+    <div class="beat rv">
+      <span class="beat-n">02 — Who it hurt</span>
+      <h2 class="h2">Three groups, three different failures</h2>
+      <p class="body sm">
+        Everyone wanted the same thing — one clear moment with a time attached. What differed was where each group
+        went when the platform could not give them one, and none of those places reported back.
+      </p>
+      <div class="diagram">
+        <svg aria-label="Persona and workaround map" role="img" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="ah" markerHeight="7" markerWidth="7" orient="auto-start-reverse" refX="8" refY="5" viewBox="0 0 10 10">
+              <path d="M0 0 L10 5 L0 10 z" fill="#8E8E98"/>
+            </marker>
+          </defs>
+          <rect fill="#fff" height="700" width="1200"/>
+          <text fill="#8E8E98" font-size="11" font-weight="500" letter-spacing=".14em" text-anchor="start" x="60" y="34">INSIDE THE PLATFORM</text>
+          <rect fill="#F3D2A6" height="46" rx="0" stroke="none" stroke-width="1" width="320" x="60" y="52"/>
+          <text class="d" fill="#111114" font-size="16" font-weight="500" letter-spacing="0" text-anchor="start" x="78" y="81">Internal Comms & HR</text>
+          <rect fill="#fff" height="116" rx="0" stroke="#D5D5DA" stroke-width="1" width="320" x="60" y="120"/>
+          <text fill="#8E8E98" font-size="11" font-weight="500" letter-spacing=".14em" text-anchor="start" x="78" y="146">NEEDED</text>
+          <text fill="#5C5C66" font-size="14.5" font-weight="400" letter-spacing="0" text-anchor="start" x="78" y="172">Coordinate time, content and</text>
+          <text fill="#5C5C66" font-size="14.5" font-weight="400" letter-spacing="0" text-anchor="start" x="78" y="193">participation for a single</text>
+          <text fill="#5C5C66" font-size="14.5" font-weight="400" letter-spacing="0" text-anchor="start" x="78" y="214">event, across systems</text>
+          <line marker-end="url(#ah)" stroke="#8E8E98" stroke-width="1.4" x1="220" x2="220" y1="248" y2="292"/>
+          <text fill="#8E8E98" font-size="12" font-weight="400" letter-spacing="0" text-anchor="start" x="232" y="275">so they reached for</text>
+          <rect fill="#FAFAFB" height="112" rx="0" stroke="#D5D5DA" stroke-dasharray="4 4" stroke-width="1" width="320" x="60" y="300"/>
+          <text fill="#111114" font-size="14.5" font-weight="400" letter-spacing="0" text-anchor="start" x="78" y="336">Promote in the CMS, invite from</text>
+          <text fill="#111114" font-size="14.5" font-weight="400" letter-spacing="0" text-anchor="start" x="78" y="357">an external calendar, chase</text>
+          <text fill="#111114" font-size="14.5" font-weight="400" letter-spacing="0" text-anchor="start" x="78" y="378">responses by email</text>
+          <line stroke="#D5D5DA" stroke-dasharray="4 4" stroke-width="1.2" x1="220" x2="220" y1="412" y2="470"/>
+          <rect fill="#CFE6D6" height="46" rx="0" stroke="none" stroke-width="1" width="320" x="440" y="52"/>
+          <text class="d" fill="#111114" font-size="16" font-weight="500" letter-spacing="0" text-anchor="start" x="458" y="81">Community managers</text>
+          <rect fill="#fff" height="116" rx="0" stroke="#D5D5DA" stroke-width="1" width="320" x="440" y="120"/>
+          <text fill="#8E8E98" font-size="11" font-weight="500" letter-spacing=".14em" text-anchor="start" x="458" y="146">NEEDED</text>
+          <text fill="#5C5C66" font-size="14.5" font-weight="400" letter-spacing="0" text-anchor="start" x="458" y="172">Run recurring and cultural</text>
+          <text fill="#5C5C66" font-size="14.5" font-weight="400" letter-spacing="0" text-anchor="start" x="458" y="193">moments, with continuity</text>
+          <text fill="#5C5C66" font-size="14.5" font-weight="400" letter-spacing="0" text-anchor="start" x="458" y="214">before and after</text>
+          <line marker-end="url(#ah)" stroke="#8E8E98" stroke-width="1.4" x1="600" x2="600" y1="248" y2="292"/>
+          <text fill="#8E8E98" font-size="12" font-weight="400" letter-spacing="0" text-anchor="start" x="612" y="275">so they reached for</text>
+          <rect fill="#FAFAFB" height="112" rx="0" stroke="#D5D5DA" stroke-dasharray="4 4" stroke-width="1" width="320" x="440" y="300"/>
+          <text fill="#111114" font-size="14.5" font-weight="400" letter-spacing="0" text-anchor="start" x="458" y="336">Misuse a one-off Event, or run</text>
+          <text fill="#111114" font-size="14.5" font-weight="400" letter-spacing="0" text-anchor="start" x="458" y="357">the whole thing in a channel</text>
+          <text fill="#111114" font-size="14.5" font-weight="400" letter-spacing="0" text-anchor="start" x="458" y="378">thread</text>
+          <line stroke="#D5D5DA" stroke-dasharray="4 4" stroke-width="1.2" x1="600" x2="600" y1="412" y2="470"/>
+          <rect fill="#D9E9F2" height="46" rx="0" stroke="none" stroke-width="1" width="320" x="820" y="52"/>
+          <text class="d" fill="#111114" font-size="16" font-weight="500" letter-spacing="0" text-anchor="start" x="838" y="81">Employees</text>
+          <rect fill="#fff" height="116" rx="0" stroke="#D5D5DA" stroke-width="1" width="320" x="820" y="120"/>
+          <text fill="#8E8E98" font-size="11" font-weight="500" letter-spacing=".14em" text-anchor="start" x="838" y="146">NEEDED</text>
+          <text fill="#5C5C66" font-size="14.5" font-weight="400" letter-spacing="0" text-anchor="start" x="838" y="172">One place that says what is</text>
+          <text fill="#5C5C66" font-size="14.5" font-weight="400" letter-spacing="0" text-anchor="start" x="838" y="193">happening and what it</text>
+          <text fill="#5C5C66" font-size="14.5" font-weight="400" letter-spacing="0" text-anchor="start" x="838" y="214">expects of them</text>
+          <line marker-end="url(#ah)" stroke="#8E8E98" stroke-width="1.4" x1="980" x2="980" y1="248" y2="292"/>
+          <text fill="#8E8E98" font-size="12" font-weight="400" letter-spacing="0" text-anchor="start" x="992" y="275">so they reached for</text>
+          <rect fill="#FAFAFB" height="112" rx="0" stroke="#D5D5DA" stroke-dasharray="4 4" stroke-width="1" width="320" x="820" y="300"/>
+          <text fill="#111114" font-size="14.5" font-weight="400" letter-spacing="0" text-anchor="start" x="838" y="336">Piece it together across the</text>
+          <text fill="#111114" font-size="14.5" font-weight="400" letter-spacing="0" text-anchor="start" x="838" y="357">calendar, an email and the</text>
+          <text fill="#111114" font-size="14.5" font-weight="400" letter-spacing="0" text-anchor="start" x="838" y="378">intranet</text>
+          <line stroke="#D5D5DA" stroke-dasharray="4 4" stroke-width="1.2" x1="980" x2="980" y1="412" y2="470"/>
+          <rect fill="#fff" height="140" rx="0" stroke="#D5D5DA" stroke-dasharray="5 5" stroke-width="1" width="1080" x="60" y="470"/>
+          <text fill="#8E8E98" font-size="11" font-weight="500" letter-spacing=".14em" text-anchor="start" x="80" y="498">OUTSIDE THE PLATFORM</text>
+          <rect fill="#F2E0B6" height="62" rx="0" stroke="none" stroke-width="1" width="326" x="80" y="520"/>
+          <text fill="#111114" font-size="14.5" font-weight="400" letter-spacing="0" text-anchor="start" x="98" y="557">External calendar invites</text>
+          <rect fill="#E4E6BE" height="62" rx="0" stroke="none" stroke-width="1" width="326" x="426" y="520"/>
+          <text fill="#111114" font-size="14.5" font-weight="400" letter-spacing="0" text-anchor="start" x="444" y="557">A spreadsheet of who is coming</text>
+          <rect fill="#E6E2F4" height="62" rx="0" stroke="none" stroke-width="1" width="326" x="772" y="520"/>
+          <text fill="#111114" font-size="14.5" font-weight="400" letter-spacing="0" text-anchor="start" x="790" y="557">Email and chat, chasing</text>
+          <text fill="#5C5C66" font-size="15" font-weight="400" letter-spacing="0" text-anchor="start" x="60" y="660">Three groups, three different failures — and the same gap, solved three times in tools the platform never saw.</text>
+        </svg>
+      </div>
+    </div>
+    <div class="beat rv">
+      <span class="beat-n">03 — The model</span>
+      <h2 class="h2">The diagram that got it approved, not the wireframe</h2>
+      <p class="body sm">
+        Rather than start from screens, I mapped the system first: what makes an Event structurally different from
+        content, how a single Event relates to its recurring occurrences, and how timing, presentation blocks and
+        distribution logic stay cleanly separated.
+      </p>
+      <p class="body sm">
+        A title is the only thing required to create one; timing is required before publish. Lifecycle status —
+        Upcoming, Live, Finished — derives automatically from that timing rather than being set by hand.
+      </p>
+      <div class="diagram">
+        <svg aria-label="Event object model" role="img" viewBox="0 0 1200 860" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="ah" markerHeight="7" markerWidth="7" orient="auto-start-reverse" refX="8" refY="5" viewBox="0 0 10 10">
+              <path d="M0 0 L10 5 L0 10 z" fill="#8E8E98"/>
+            </marker>
+          </defs>
+          <rect fill="#fff" height="860" width="1200"/>
+          <text fill="#8E8E98" font-size="11" font-weight="500" letter-spacing=".14em" text-anchor="start" x="60" y="32">WHAT EXISTED</text>
+          <rect fill="#FAFAFB" height="190" rx="0" stroke="#D5D5DA" stroke-width="1" width="270" x="60" y="48"/>
+          <text class="d" fill="#111114" font-size="17" font-weight="500" letter-spacing="0" text-anchor="start" x="80" y="84">Content page</text>
+          <text fill="#5C5C66" font-size="14.5" font-weight="400" letter-spacing="0" text-anchor="start" x="80" y="118">— Title</text>
+          <text fill="#5C5C66" font-size="14.5" font-weight="400" letter-spacing="0" text-anchor="start" x="80" y="148">— Body blocks</text>
+          <text fill="#5C5C66" font-size="14.5" font-weight="400" letter-spacing="0" text-anchor="start" x="80" y="178">— A publish date</text>
+          <text fill="#8E8E98" font-size="13" font-weight="400" letter-spacing="0" text-anchor="start" x="80" y="214">A date is not a lifecycle.</text>
+          <line marker-end="url(#ah)" stroke="#8E8E98" stroke-width="1.4" x1="345" x2="405" y1="143" y2="143"/>
+          <text fill="#8E8E98" font-size="11" font-weight="500" letter-spacing=".14em" text-anchor="start" x="420" y="32">WHAT AN EVENT ACTUALLY IS</text>
+          <rect fill="#fff" height="190" rx="0" stroke="#111114" stroke-width="1.6" width="380" x="420" y="48"/>
+          <text class="d" fill="#111114" font-size="17" font-weight="500" letter-spacing="0" text-anchor="start" x="442" y="84">Event object</text>
+          <rect fill="#F3D2A6" height="30" rx="0" stroke="none" stroke-width="1" width="336" x="442" y="110"/>
+          <text fill="#111114" font-size="14.5" font-weight="500" letter-spacing="0" text-anchor="start" x="454" y="130">Title</text>
+          <text fill="#5C5C66" font-size="12.5" font-weight="400" letter-spacing="0" text-anchor="end" x="766" y="130">required to create</text>
+          <rect fill="#F3D2A6" height="30" rx="0" stroke="none" stroke-width="1" width="336" x="442" y="148"/>
+          <text fill="#111114" font-size="14.5" font-weight="500" letter-spacing="0" text-anchor="start" x="454" y="168">Timing</text>
+          <text fill="#5C5C66" font-size="12.5" font-weight="400" letter-spacing="0" text-anchor="end" x="766" y="168">required to publish</text>
+          <rect fill="#D9E9F2" height="30" rx="0" stroke="none" stroke-width="1" width="336" x="442" y="186"/>
+          <text fill="#111114" font-size="14.5" font-weight="500" letter-spacing="0" text-anchor="start" x="454" y="206">Audience, RSVP</text>
+          <text fill="#5C5C66" font-size="12.5" font-weight="400" letter-spacing="0" text-anchor="end" x="766" y="206">optional</text>
+          <line marker-end="url(#ah)" stroke="#8E8E98" stroke-width="1.4" x1="815" x2="875" y1="143" y2="143"/>
+          <text fill="#8E8E98" font-size="11" font-weight="500" letter-spacing=".14em" text-anchor="start" x="890" y="32">DERIVED, NOT SET</text>
+          <rect fill="#fff" height="190" rx="0" stroke="#D5D5DA" stroke-width="1" width="250" x="890" y="48"/>
+          <rect fill="#D9E9F2" height="32" rx="0" stroke="none" stroke-width="1" width="210" x="910" y="84"/>
+          <text fill="#111114" font-size="14.5" font-weight="500" letter-spacing="0" text-anchor="start" x="924" y="105">Upcoming</text>
+          <line marker-end="url(#ah)" stroke="#8E8E98" stroke-width="1.4" x1="1015" x2="1015" y1="118" y2="126"/>
+          <rect fill="#CFE6D6" height="32" rx="0" stroke="none" stroke-width="1" width="210" x="910" y="128"/>
+          <text fill="#111114" font-size="14.5" font-weight="500" letter-spacing="0" text-anchor="start" x="924" y="149">Live</text>
+          <line marker-end="url(#ah)" stroke="#8E8E98" stroke-width="1.4" x1="1015" x2="1015" y1="162" y2="170"/>
+          <rect fill="#FAFAFB" height="32" rx="0" stroke="#D5D5DA" stroke-width="1" width="210" x="910" y="172"/>
+          <text fill="#111114" font-size="14.5" font-weight="500" letter-spacing="0" text-anchor="start" x="924" y="193">Finished</text>
+          <text fill="#8E8E98" font-size="12.5" font-weight="400" letter-spacing="0" text-anchor="start" x="910" y="222">from timing, not a toggle</text>
+          <line stroke="#D5D5DA" x1="60" x2="1140" y1="288" y2="288"/>
+          <text fill="#8E8E98" font-size="11" font-weight="500" letter-spacing=".14em" text-anchor="start" x="60" y="322">KEPT SEPARATE, SO ONE CAN CHANGE WITHOUT THE OTHERS</text>
+          <rect fill="#fff" height="132" rx="0" stroke="#D5D5DA" stroke-width="1" width="340" x="60" y="344"/>
+          <rect fill="#F2E0B6" height="6" rx="0" stroke="none" stroke-width="1" width="340" x="60" y="344"/>
+          <text class="d" fill="#111114" font-size="16" font-weight="500" letter-spacing="0" text-anchor="start" x="80" y="384">Timing</text>
+          <text fill="#5C5C66" font-size="14" font-weight="400" letter-spacing="0" text-anchor="start" x="80" y="414">Start, end, repeat pattern</text>
+          <text fill="#5C5C66" font-size="14" font-weight="400" letter-spacing="0" text-anchor="start" x="80" y="435">Time zone anchoring</text>
+          <rect fill="#fff" height="132" rx="0" stroke="#D5D5DA" stroke-width="1" width="340" x="430" y="344"/>
+          <rect fill="#E4E6BE" height="6" rx="0" stroke="none" stroke-width="1" width="340" x="430" y="344"/>
+          <text class="d" fill="#111114" font-size="16" font-weight="500" letter-spacing="0" text-anchor="start" x="450" y="384">Presentation</text>
+          <text fill="#5C5C66" font-size="14" font-weight="400" letter-spacing="0" text-anchor="start" x="450" y="414">Optional article blocks</text>
+          <text fill="#5C5C66" font-size="14" font-weight="400" letter-spacing="0" text-anchor="start" x="450" y="435">Or a zero-authoring roll-up</text>
+          <rect fill="#fff" height="132" rx="0" stroke="#D5D5DA" stroke-width="1" width="340" x="800" y="344"/>
+          <rect fill="#E6E2F4" height="6" rx="0" stroke="none" stroke-width="1" width="340" x="800" y="344"/>
+          <text class="d" fill="#111114" font-size="16" font-weight="500" letter-spacing="0" text-anchor="start" x="820" y="384">Distribution</text>
+          <text fill="#5C5C66" font-size="14" font-weight="400" letter-spacing="0" text-anchor="start" x="820" y="414">Roll-ups and widgets</text>
+          <text fill="#5C5C66" font-size="14" font-weight="400" letter-spacing="0" text-anchor="start" x="820" y="435">Outbound calendar sync</text>
+          <line marker-end="url(#ah)" stroke="#8E8E98" stroke-dasharray="3 3" stroke-width="1.4" x1="400" x2="425" y1="410" y2="410"/>
+          <line marker-end="url(#ah)" stroke="#8E8E98" stroke-dasharray="3 3" stroke-width="1.4" x1="770" x2="795" y1="410" y2="410"/>
+          <line stroke="#D5D5DA" x1="60" x2="1140" y1="530" y2="530"/>
+          <text fill="#8E8E98" font-size="11" font-weight="500" letter-spacing=".14em" text-anchor="start" x="60" y="564">RECURRENCE</text>
+          <rect fill="#fff" height="150" rx="0" stroke="#111114" stroke-width="1.6" width="300" x="60" y="584"/>
+          <text class="d" fill="#111114" font-size="16" font-weight="500" letter-spacing="0" text-anchor="start" x="80" y="622">Event (parent)</text>
+          <text fill="#5C5C66" font-size="14" font-weight="400" letter-spacing="0" text-anchor="start" x="80" y="652">One record</text>
+          <text fill="#5C5C66" font-size="14" font-weight="400" letter-spacing="0" text-anchor="start" x="80" y="673">+ a repeat pattern</text>
+          <text fill="#5C5C66" font-size="14" font-weight="400" letter-spacing="0" text-anchor="start" x="80" y="694">+ shared details</text>
+          <line marker-end="url(#ah)" stroke="#8E8E98" stroke-width="1.4" x1="375" x2="425" y1="659" y2="659"/>
+          <rect fill="#FAFAFB" height="150" rx="0" stroke="#D5D5DA" stroke-width="1" width="215" x="440" y="584"/>
+          <text fill="#111114" font-size="14.5" font-weight="500" letter-spacing="0" text-anchor="start" x="458" y="618">Occurrence 1</text>
+          <text fill="#5C5C66" font-size="13.5" font-weight="400" letter-spacing="0" text-anchor="start" x="458" y="646">Own date</text>
+          <text fill="#5C5C66" font-size="13.5" font-weight="400" letter-spacing="0" text-anchor="start" x="458" y="666">Own location</text>
+          <text fill="#5C5C66" font-size="13.5" font-weight="400" letter-spacing="0" text-anchor="start" x="458" y="686">Own speaker</text>
+          <rect fill="#FAFAFB" height="150" rx="0" stroke="#D5D5DA" stroke-width="1" width="215" x="680" y="584"/>
+          <text fill="#111114" font-size="14.5" font-weight="500" letter-spacing="0" text-anchor="start" x="698" y="618">Occurrence 2</text>
+          <text fill="#5C5C66" font-size="13.5" font-weight="400" letter-spacing="0" text-anchor="start" x="698" y="646">Own date</text>
+          <text fill="#5C5C66" font-size="13.5" font-weight="400" letter-spacing="0" text-anchor="start" x="698" y="666">Own location</text>
+          <text fill="#5C5C66" font-size="13.5" font-weight="400" letter-spacing="0" text-anchor="start" x="698" y="686">Own speaker</text>
+          <rect fill="#FAFAFB" height="150" rx="0" stroke="#D5D5DA" stroke-width="1" width="215" x="920" y="584"/>
+          <text fill="#111114" font-size="14.5" font-weight="500" letter-spacing="0" text-anchor="start" x="938" y="618">Occurrence 3</text>
+          <text fill="#5C5C66" font-size="13.5" font-weight="400" letter-spacing="0" text-anchor="start" x="938" y="646">Own date</text>
+          <text fill="#5C5C66" font-size="13.5" font-weight="400" letter-spacing="0" text-anchor="start" x="938" y="666">Own location</text>
+          <text fill="#5C5C66" font-size="13.5" font-weight="400" letter-spacing="0" text-anchor="start" x="938" y="686">Own speaker</text>
+          <text fill="#5C5C66" font-size="15" font-weight="400" letter-spacing="0" text-anchor="start" x="60" y="776">Not duplicated records — so editing the series stays possible, and a search for “Townhall” finds the parent, then the next one.</text>
+          <text fill="#111114" font-size="15" font-weight="500" letter-spacing="0" text-anchor="start" x="60" y="812">This map, not a wireframe, is what got the model approved.</text>
+        </svg>
+      </div>
+    </div>
+    <div class="split flip rv">
+      <div class="t">
+        <span class="beat-n">04 — Recurrence</span>
+        <h2 class="h2">One Event with a repeat pattern, not duplicated records</h2>
+        <p class="body sm">
+          Duplicating a record per occurrence was faster to ship and breaks the moment recurrence needs
+          cross-occurrence consistency or editing. So a recurring Event is a single object with a shared repeat
+          pattern.
+        </p>
+        <p class="body sm">
+          In practice: an employee searches “Townhall”, finds the parent Event, sees the overarching details plus a
+          component promoting the next occurrence, and can drill into a specific one for its own location, topic or
+          speaker.
+        </p>
+      </div>
+      <div class="v">
+        <img class="shot" src="../assets/img/events/multiple-locations.webp" alt="A published event with multiple locations and local times">
+      </div>
+    </div>
+    <div class="split rv">
+      <div class="t">
+        <span class="beat-n">05 — Zero-authoring</span>
+        <h2 class="h2">Not every event needs an article</h2>
+        <p class="body sm">
+          Requiring a content page for every Event would have forced organisers straight back into a workaround for
+          simple moments that don’t need one. So an Event publishes and appears in roll-ups with zero content
+          authoring — or, optionally, gets a supporting article with the Event details embedded inside it.
+        </p>
+        <p class="body sm">
+          Events were built on the platform’s existing block system rather than a parallel presentation layer. The
+          RSVP and Join/Access blocks introduced here were contributed back to the shared library rather than kept
+          Event-specific — which is why the Event object later powered the Events tab and “Upcoming events” widget
+          inside Communities with no additional engineering.
+        </p>
+      </div>
+      <div class="v">
+        <img class="shot" src="../assets/img/events/publish-options.webp" alt="Publishing an event: notify everyone, or publish quietly">
+      </div>
+    </div>
+    <div class="pull rv">
+      <span class="beat-n">06 — The bar, set before a line of code</span>
+      <h2 class="h2">Four criteria, two of them deliberately awkward to hit</h2>
+      <p class="body sm">
+        <strong>100% functional parity</strong> — no net loss of any existing Event use case. <strong>80%+ unaided
+        clarity</strong> — usability participants identify an Event without explanation. <strong>3 validated
+        scenarios</strong> — standard events published with zero external tools. <strong>0 architecture
+        blockers</strong> — confirmed by Engineering against named future concepts.
+      </p>
+      <p class="body sm">
+        These were agreed with Product and Engineering before design or build started, not backfilled afterwards.
+        Unaided clarity is measured through usability testing rather than survey sentiment, and architectural
+        readiness is signed off against specific roadmap concepts rather than a general sense that the model feels
+        extensible.
+      </p>
+    </div>
+    <div class="split flip rv">
+      <div class="t">
+        <span class="beat-n">07 — Where it stands</span>
+        <h2 class="h2">Foundation over full lifecycle</h2>
+        <p class="body sm">
+          Cycle 1 is still in build, so there is no post-launch adoption data — and I’d rather say that than dress a
+          target up as a result.
+        </p>
+        <p class="body sm">
+          The clearest signal so far is qualitative: Engineering’s architecture review confirmed no schema constraints
+          blocking recurring events, rituals or experience layering. That’s the strongest early indicator the
+          foundation holds under the next two phases of roadmap.
+        </p>
+        <p class="body sm">
+          Three of the four major decisions here were deliberate reductions in scope — outbound-only calendar sync,
+          RSVP capturing declared intent with attendance out of scope, no full lifecycle tracking. The model had to be
+          correct first and complete later, because every capability deferred was one that would have been harder to
+          unpick if the structure turned out wrong.
+        </p>
+      </div>
+      <div class="v">
+        <img class="shot" src="../assets/img/events/attendees-tab.webp" alt="The attendees tab with response totals and RSVP status">
+      </div>
+    </div>
+    <div class="beat rv">
+      <span class="beat-n">08 — Before and after</span>
+      <h2 class="h2">The same moment, either side of the model</h2>
+      <p class="body sm">
+        Before, an Event was a content page wearing a date. No status, no RSVP, no sense of what it wanted from you
+        — and organisers reaching for an external calendar to fill the gaps. After, it is an object the platform
+        understands: lifecycle, locations, responses and presentation, all derived from the model rather than
+        assembled by hand.
+      </p>
+      <figure class="ba">
+        <div class="ba-stage" style="--p:50%">
+          <img src="../assets/img/events/redesigned-event-page.webp" alt="The redesigned event page">
+          <div class="ba-clip">
+            <img src="../assets/img/events/old-event-page.webp" alt="The old event page">
+          </div>
+          <input class="ba-range" type="range" aria-label="Reveal the before and after event page" max="100" min="0" step="1" value="50">
+          <div class="ba-line">
+            <div class="ba-knob">
+              ‹›
+            </div>
+          </div>
+          <span class="ba-tag l">Before</span>
+          <span class="ba-tag r">After</span>
+        </div>
+        <figcaption>Drag the handle — or use the arrow keys — to compare.</figcaption>
+      </figure>
+    </div>
+    <div class="reflect rv">
+      <span class="beat-n">09 — Reflection</span>
+      <div class="cols">
+        <div>
+          <h3 class="h3">What I got wrong</h3>
+          <div class="stickies">
+            <div class="sticky">
+              The parent Event concept for recurring series was defined late. It only surfaced when we walked through a real Townhall search, so the object model needed a late addition.
+            </div>
+            <div class="sticky">
+              Which fields should surface when an Event is embedded in an article was still unresolved. We underestimated how much design that small-sounding question needed.
+            </div>
+            <div class="sticky">
+              Whether participation details apply per occurrence or only at Event level is genuinely unsettled. We shipped the simpler version rather than block Cycle 1 — a call we’re validating, not one we settled.
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="h3">What happens next</h3>
+          <div class="stickies">
+            <div class="sticky">
+              Confirmed attendance and richer analytics, attributed back to the Event model rather than the surfaces that host it.
+            </div>
+            <div class="sticky">
+              Two-way external sync, so changes made in Outlook flow back as the source of truth evolves.
+            </div>
+            <div class="sticky">
+              Resolving search discovery — whether a search surfaces the core Event, any page it’s embedded on, or individual occurrences separately.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nextnav rv">
+      <a href="../work/communities.html">
+        <span class="eyebrow block">Next project</span>
+        <h3 class="h3">Communities →</h3>
+      </a>
+      <a href="mailto:roksanatruszkowska@outlook.com">
+        <span class="eyebrow block">Say hello</span>
+        <h3 class="h3">Get in touch →</h3>
+      </a>
+    </div>
+  </div>
+  <footer>
+    <div class="wrap">
+      <div class="foot-top">
+        <h2 class="h2">Thanks for scrolling.</h2>
+        <div class="foot-links">
+          <a class="lnk" href="mailto:roksanatruszkowska@outlook.com">roksanatruszkowska@outlook.com</a>
+          <a class="lnk" href="https://www.linkedin.com/in/roksana-truszkowska-4886b31b8/" rel="noopener" target="_blank">
+            LinkedIn
+          </a>
+          <a class="lnk" href="../index.html">Back to work</a>
+        </div>
+      </div>
+      <div class="foot-bot">
+        <span>Roksana Truszkowska — Product Designer</span>
+        <span>© 2026</span>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<script src="../assets/js/main.js" defer></script>
+<script src="../assets/js/stickers.js" defer></script>
+</body>
+</html>
