@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>/* always open a page at the top (unless a #section was linked) */
+try{history.scrollRestoration='manual';}catch(e){}
+(function(){function top(){if(location.hash)return;window.scrollTo(0,0);try{document.documentElement.scrollIntoView({block:'start'});}catch(e){}}
+top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addEventListener('pageshow',top);})();</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Notifications: what to ship first when everything is broken — Roksana Truszkowska</title>
+<meta name="description" content="A ground-up redesign of the platform’s notifications — from a flat tray nobody trusted to a context-aware system that decides what to send, when, and to which device. Sequenced across three releases.">
+<meta property="og:title" content="Notifications: what to ship first when everything is broken — Roksana Truszkowska">
+<meta property="og:description" content="A ground-up redesign of the platform’s notifications — from a flat tray nobody trusted to a context-aware system that decides what to send, when, and to which device. Sequenced across three releases.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&family=Instrument+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/story.css">
+</head>
+<body class="story">
+<a class="skip" href="#content">Skip to content</a>
+
+<div class="pnav-wrap" id="pnav">
+  <nav class="pnav" aria-label="Main">
+    <a href="../index.html#work" class="active">work</a>
+    <a href="../about.html">about</a>
+    <a href="mailto:roksanatruszkowska@outlook.com">email</a>
+    <a href="../cv.pdf" data-cv download="Roksana-Truszkowska-CV.pdf">cv</a>
+  </nav>
+</div>
+
+<main id="content">
+  <div class="s-wide">
+    <header class="s-head s-rv">
+      <p class="s-label">Unily · Case study · Flagship feature, end to end</p>
+      <h1>What to ship first when everything is broken</h1>
+      <p class="s-sub">A ground-up redesign of the platform’s notifications — from a flat tray nobody trusted to a context-aware system that decides what to send, when, and to which device. Sequenced across three releases.</p>
+      <div class="s-chips">
+        <span class="s-chip">6 min read</span>
+        <a class="s-chip" href="#deep-dive">skip to deep dive ↓</a>
+      </div>
+    </header>
+
+    <section class="s-overview s-rv" aria-label="Project overview">
+      <div class="s-meta">
+        <p class="s-label">Overview</p>
+        <dl><dt>My role</dt><dd>Product Designer — research synthesis, service blueprint, IA and settings, delivery strategy</dd><dt>Platforms</dt><dd>Intranet, desktop tray, mobile push, email</dd><dt>Stakeholders</dt><dd>Product, engineering, C-level and enterprise clients weighing up migration</dd><dt>Methods</dt><dd>Academic literature review, market and competitive analysis, user and stakeholder research, problem statements and How Might We, service blueprint, storyboarding</dd><dt>Measures</dt><dd>Tray engagement, dismiss rate, settings completion, support tickets — set before build</dd></dl>
+      </div>
+      <div class="s-impact">
+        <p class="s-label">✦ Impact</p>
+        <div><b>8</b><p>distinct problems, resolved by one strategy rather than eight fixes</p></div><div><b>3</b><p>releases, sequenced — visible win, then reliability, then intelligence</p></div><div><b>4</b><p>measures set before build: tray engagement, dismiss rate, settings completion, support tickets</p></div>
+      </div>
+    </section>
+
+    <div class="s-hero s-rv"><video autoplay loop muted playsinline controls preload="metadata" poster="../assets/video/notifications-tray-poster.jpg" aria-label="The redesigned notification tray opening"><source src="../assets/video/notifications-tray.webm" type="video/webm"><source src="../assets/video/notifications-tray.mp4" type="video/mp4"></video></div>
+  </div>
+
+  <div class="s-read">
+    <p class="s-intro s-rv">Users had been asking for this for three years. The research pointed at an ambitious system; the loudest complaints were about things that were simply broken. The real design problem was what to ship first.</p>
+    <section class="s-chapter s-rv" id="problem">
+      <span class="s-label">01 — The problem</span>
+      <h2>A productivity tax nobody was measuring</h2>
+      <p>Notifications keep employees informed, and unmanaged they systematically destroy the focus that makes the information useful. Employees are interrupted every 10 to 30 minutes — more than 160 disruptions a week — and 77% report finding notifications distracting. Each interruption costs roughly 23 minutes of recovery.</p>
+      <p>On our own platform it was worse than generic overload. Users couldn’t tell what a notification referred to or why they’d received it. Duplicates arrived for the same event. The tray didn’t refresh, so nobody trusted it. A security alert looked identical to a comment on a post. And everything arrived in English, on a platform serving organisations with employees speaking 26 or more languages.</p>
+      <div class="s-cards"><div class="s-card"><h4>Frustration & expectations</h4><ul><li>“Isn’t this a REALLY old ideation (3+ years)?”</li><li>C-level asking for it by name</li><li>Clients cite it when they weigh up leaving</li></ul><p class="s-then">→ A visible roadmap, and quick wins.</p></div><div class="s-card"><h4>Noise & duplicates</h4><ul><li>Two notifications for one event</li><li>No grouping — trays overwhelm</li><li>Still there after you’ve actioned it</li></ul><p class="s-then">→ Group, dedupe, clear what’s done.</p></div><div class="s-card"><h4>Control</h4><ul><li>Digest cadence, site-level config</li><li>Hours that follow your time zone</li><li>Quiet hours: a legal requirement in some countries</li></ul><p class="s-then">→ Do not disturb, quiet hours, digests.</p></div></div>
+      <p>Clients evaluating whether to migrate away were citing notifications as a decision factor. This wasn’t only a design problem about interruption. <strong>It was a credibility problem about delivery.</strong></p>
+      </section>
+<section class="s-chapter s-rv" id="research">
+      <span class="s-label">02 — Research</span>
+      <h2>Three streams that would each have given a different answer alone</h2>
+      <ul class="s-list"><li><span><strong>Academic work on interruption.</strong> Mid-task interruptions cause the largest performance hit, increasing both completion time and error rates. Real-time notifications reduce deep work. Batched hourly digests improve focus.</span></li><li><span><strong>Market and competitive analysis.</strong> Five patterns recurred outside the intranet category: bundling, context-aware timing, relevance filtering, wellbeing controls, and actionability from within the notification itself.</span></li><li><span><strong>Internal user and stakeholder research.</strong> Seven themes, the seventh of which was really about trust — frustration at the pace of progress.</span></li></ul>
+      <figure class="s-fig wide">
+        <div class="s-frame"><img src="../assets/img/notifications/discovery-board.webp" alt="Discovery board showing three research streams" loading="lazy"><button type="button" class="s-zoom" aria-label="Enlarge image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div>
+        <figcaption>Discovery board — three research streams side by side</figcaption>
+      </figure>
+      <aside class="s-callout"><span class="s-label">Key finding</span><h3>Turning notifications off doesn’t work.</h3><p>Silence triggers fear of missing out and compulsive self-checking. The effective interventions are batching, context-aware timing and user control. <em>Moderation, not removal.</em></p></aside>
+      </section>
+<section class="s-chapter s-rv" id="framing">
+      <span class="s-label">03 — Framing</span>
+      <h2>Eight problems, and one that makes the others worse</h2>
+      <p>Rather than carry seven research themes into design, I wrote eight problem statements, each with a user story and a set of How Might We questions — so the team was solving stated problems rather than reacting to feedback.</p>
+      <p>Problem 8 was notification settings themselves: so numerous that nobody ever personalised anything. It matters most because every fix for problems 1 through 7 is tempting to solve with another setting, and each new setting makes 8 worse. Naming it early is what stopped the design defaulting to configuration.</p>
+      <p class="s-note"><span class="s-label">The reframe that changed the priority order</span>Notifications sent outside working hours carry real financial exposure in right-to-disconnect jurisdictions — so quiet hours weren’t a wellbeing nice-to-have but a compliance requirement with a business case attached. That is what got it prioritised.</p>
+      <figure class="s-fig">
+        <div class="s-frame"><img src="../assets/img/notifications/hmw-ideation.webp" alt="Problem statements with How Might We questions and ideation" loading="lazy"><button type="button" class="s-zoom" aria-label="Enlarge image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div>
+        <figcaption>Problem statements, How Might We questions and ideation</figcaption>
+      </figure>
+      </section>
+<section class="s-chapter s-rv" id="system">
+      <span class="s-label">04 — The system</span>
+      <h2>A notification that chases you, rather than broadcasting at you</h2>
+      <p>The core mechanic is a delivery ladder. It goes to the desktop tray first, if you’re there. Unopened, it escalates to mobile push. Still ignored and important enough, it becomes an email with a clear call to action.</p>
+      <p>That ladder is what makes moderation possible: because the system can escalate when something is genuinely urgent, it can afford to stay quiet about everything else.</p>
+      <p>Four services sit behind it, none visible to the user — a timing engine that learns engagement patterns and avoids meetings and deep focus, presence detection that identifies which device is actually in use, channel orchestration that handles escalation, and an analytics feedback loop that refines both over time.</p>
+      <figure class="s-fig wide">
+        <div class="s-frame"><img src="../assets/img/notifications/service-blueprint.webp" alt="Service blueprint across evidence, customer, frontstage, backstage and support layers" loading="lazy"><button type="button" class="s-zoom" aria-label="Enlarge image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div>
+        <figcaption>Service blueprint — evidence, customer, frontstage, backstage and support</figcaption>
+      </figure>
+      <h3>A day in the life: settings, solved by never opening them</h3>
+      <ul class="s-list"><li><span><strong>Morning.</strong> Alex logs in on desktop. The system has learnt he checks notifications then, so a news item on a topic he follows arrives there. He reads it; it never escalates.</span></li><li><span><strong>Lunch.</strong> A critical system alert fires. Tray first. No click within five minutes, so it escalates to push. Still ignored, it becomes an email.</span></li><li><span><strong>Afternoon.</strong> He sets Do Not Disturb for deep work, one till three. Likes, comments and FYIs queue rather than send. At three he gets one grouped digest of what he missed, on whichever device he’s actually using.</span></li><li><span><strong>Later.</strong> A community post is irrelevant to him. He marks it “not relevant”, which trains the system to deprioritise similar content. He never opens settings — preference-setting becomes a by-product of use.</span></li></ul>
+      <figure class="s-fig wide">
+        <div class="s-frame"><img src="../assets/img/notifications/storyboard.webp" alt="Six-panel storyboard of one user&#x27;s notification journey through a day" loading="lazy"><button type="button" class="s-zoom" aria-label="Enlarge image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div>
+        <figcaption>Storyboard — one user, one day, no settings screen</figcaption>
+      </figure>
+      </section>
+<section class="s-chapter s-rv" id="sequencing">
+      <span class="s-label">05 — Sequencing</span>
+      <h2>The visionary version would have meant another long silence</h2>
+      <p>The research pointed at an ambitious system: context-aware timing, AI escalation, behavioural learning. Correct destination, long build. Meanwhile the loudest feedback was about things that were simply broken — a tray that didn’t refresh, confusing read states, a modal that blocked the workspace. Users had been raising those for three years.</p>
+      <p>So I split the strategy into three independently releasable parts:</p>
+      <div class="s-cards"><div class="s-card"><b class="s-n">V1</b><p><strong>Layout and placement.</strong> Move the tray from a centre-screen modal to a right-hand panel matching the pattern people know from Teams and Slack. No backend work, visible the day it ships.</p></div><div class="s-card"><b class="s-n">V2</b><p><strong>Reliability and comprehension.</strong> Auto-refresh, consistent read states, bulk actions, context labels, error handling, accessibility and performance.</p></div><div class="s-card"><b class="s-n">V3</b><p><strong>Intelligence.</strong> The timing engine, presence detection, orchestration, digests and multilingual delivery.</p></div></div>
+      <p>The argument made to stakeholders was that <strong>V1 buys back the credibility that makes V3 fundable.</strong> A low-risk, high-visibility release proves movement to an audience that had concluded there wouldn’t be any.</p>
+      <figure class="s-fig">
+        <div class="s-frame"><img src="../assets/img/notifications/v1-strategy.webp" alt="V1 Basic Reskin strategy: functionality, pain point, proposed solution and value" loading="lazy"><button type="button" class="s-zoom" aria-label="Enlarge image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div>
+        <figcaption>V1 strategy — functionality, pain point, proposed solution and value</figcaption>
+      </figure>
+      <aside class="s-callout"><span class="s-label">The call I’d defend</span><h3>Smart defaults and in-line feedback, not more settings</h3><p>Giving users granular control over every notification type was the obvious answer, and it would have made the eighth problem worse — every new control makes configuration less likely to happen at all.</p><p>Instead: smart defaults, plus a “not relevant” action inline in the notification itself. Preferences get learnt from behaviour rather than configured in a settings screen nobody opens.</p></aside>
+      </section>
+<section class="s-deep s-rv" id="deep-dive" tabindex="0" aria-label="Deep dive: The tray, step by step">
+      <div class="s-deep-head">
+        <p class="s-label">Deep dive</p>
+        <h2>The tray, step by step</h2>
+        <p>Before: a hundred undifferentiated rows ordered by nothing but age. After: a tray that sorts, groups and lets you act — walk through it.</p>
+      </div>
+      <div class="s-stage"><div class="s-shot" data-title="Before" data-body="A hundred identical rows, ordered by age, with dismiss-all as the only realistic action."><img src="../assets/img/notifications/tray-before.webp" alt="The old notifications dialog: a hundred identical rows" loading="lazy"></div><div class="s-shot" data-title="Unread, sorted by type" data-body="Five unread, sorted by type, with actions on the notification itself — the one that needs a decision sits at the top."><img src="../assets/img/notifications/tray-unread.webp" alt="The redesigned notification tray: five unread, sorted by type" loading="lazy"></div><div class="s-shot" data-title="Grouped where it belongs together" data-body="Updates from several communities collapse into one entry, expandable in place."><img src="../assets/img/notifications/tray-grouped.webp" alt="Community updates grouped into one expandable notification" loading="lazy"></div><div class="s-shot" data-title="Read keeps its own tab" data-body="Read notifications keep their own tab, with upload and review outcomes."><img src="../assets/img/notifications/tray-read.webp" alt="The read tab of the notification tray" loading="lazy"></div><div class="s-shot" data-title="Settings that stay short" data-body="Types grouped by category, each switchable per channel — short, because most preferences are learnt from behaviour."><img src="../assets/img/notifications/tray-settings.webp" alt="Notification settings: types grouped by category, each with tray, push and email switches" loading="lazy"></div></div>
+      <div class="s-ctrl">
+        <div class="s-step-text" aria-live="polite">
+          <p class="s-step-n"></p>
+          <p class="s-step-title"></p>
+          <p class="s-step-body"></p>
+        </div>
+        <div class="s-btns">
+          <button type="button" class="s-btn" data-prev aria-label="Previous step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button type="button" class="s-btn" data-next aria-label="Next step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+      <div class="s-dots"><button type="button" aria-label="Step 1: Before"></button><button type="button" aria-label="Step 2: Unread, sorted by type"></button><button type="button" aria-label="Step 3: Grouped where it belongs together"></button><button type="button" aria-label="Step 4: Read keeps its own tab"></button><button type="button" aria-label="Step 5: Settings that stay short"></button></div>
+      <p class="s-hint">Use the arrow keys or buttons to step through</p>
+    </section>
+<section class="s-chapter s-rv" id="outcome">
+      <span class="s-label">06 — Where it stands</span>
+      <h2>What shipped, and what it’s judged on</h2>
+      <p>This is a sequenced release rather than a finished product, and the numbers that matter aren’t all in yet. The measures worth tracking were set upfront: tray engagement and open rate, dismiss rate, settings-completion rate, and notification-related support ticket volume before and after.</p>
+      <p>The strongest qualitative signal available is probably a client one — notifications were being cited as a migration risk, so a changed client conversation is worth more here than an engagement percentage.</p>
+      <h3>The same inbox, either side of the redesign</h3>
+      <div class="s-raw"><div class="beforeafter">
+        <figure>
+          <span class="step">Before</span>
+          <img class="raised" src="../assets/img/notifications/tray-before.webp" alt="The old notifications dialog: a hundred identical rows">
+          <figcaption>A hundred identical rows, and one button that clears the lot.</figcaption>
+        </figure>
+        <div class="mark" aria-hidden="true">
+          →
+        </div>
+        <figure>
+          <span class="step">After</span>
+          <img class="raised" src="../assets/img/notifications/tray-unread.webp" alt="The redesigned notification tray: five unread, sorted by type">
+          <figcaption>Five unread, sorted by type, with actions on the notification itself.</figcaption>
+        </figure>
+      </div></div>
+      </section>
+
+    <section class="s-reflect s-rv">
+      <p class="s-label">Reflection and learnings</p>
+      <h2>The order you ship in is a design decision</h2>
+      <p>The biggest lesson: when trust in delivery is gone, the most valuable first release is the one people can see — even if it’s the least ambitious.</p>
+      <h3>What I got wrong</h3>
+      <div class="s-lessons"><div class="s-lesson"><b>01</b><p>The research was extremely broad — three streams, eight problem statements. Worth asking whether that delayed a decision the user feedback alone could have supported earlier.</p></div><div class="s-lesson"><b>02</b><p>Accessibility landed in the Medium tier rather than V1 — the sequencing call I would most expect to be challenged on.</p></div><div class="s-lesson"><b>03</b><p>Multilingual support was one of the strongest themes in the research and still sits in V3 — the distance between what research surfaced and what the sequence could carry.</p></div><div class="s-lesson"><b>04</b><p>V3 depends on presence detection and behavioural learning that need real usage data to be any good. Was that dependency sized honestly at sign-off?</p></div></div>
+      <h3>What happens next</h3>
+      <div class="s-lessons s-next"><div class="s-lesson"><b>01</b><p>V3 delivery — the timing engine, presence detection and the analytics loop that turn the ladder from a fixed rule into learned behaviour.</p></div><div class="s-lesson"><b>02</b><p>Multilingual notifications respecting user profile language — a direct blocker to adoption in global organisations.</p></div><div class="s-lesson"><b>03</b><p>Proactive discovery: trending and “you might have missed” digests, balanced against the overload this set out to reduce.</p></div><div class="s-lesson"><b>04</b><p>Measurement — open, click-through and dismiss rates, so the next iteration is tuned on evidence rather than feedback volume.</p></div></div>
+      <p class="s-closing">V1 buys back the credibility that makes V3 fundable.</p>
+    </section>
+  </div>
+
+  <div class="s-wide">
+    <section class="s-others s-rv" aria-label="Other case studies">
+      <p class="s-label">Other case studies</p>
+      <div class="s-others-grid"><a class="s-other" href="portal-blocks.html"><span class="s-label">Unily Futures · 0 → 1 design system</span><h3>A block system a CMS editor and an AI agent can both build with</h3><span class="s-arrow" aria-hidden="true">→</span></a><a class="s-other" href="events.html"><span class="s-label">Unily · Object model</span><h3>From content workaround to first-class capability</h3><span class="s-arrow" aria-hidden="true">→</span></a><a class="s-other" href="communities.html"><span class="s-label">Unily · End to end</span><h3>Five problems, one root cause</h3><span class="s-arrow" aria-hidden="true">→</span></a></div>
+      <a class="s-back" href="../index.html#work">← back to home</a>
+    </section>
+    <footer class="s-foot">
+      <p class="s-label">© 2026 Roksana Truszkowska</p>
+      <p class="s-label">Designed &amp; built with ♥ (&amp; coffee)</p>
+    </footer>
+  </div>
+</main>
+
+<script src="../assets/js/main.js" defer></script>
+<script src="../assets/js/story.js" defer></script>
+<script src="../assets/js/cv.js" defer></script>
+</body>
+</html>

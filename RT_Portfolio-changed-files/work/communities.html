@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>/* always open a page at the top (unless a #section was linked) */
+try{history.scrollRestoration='manual';}catch(e){}
+(function(){function top(){if(location.hash)return;window.scrollTo(0,0);try{document.documentElement.scrollIntoView({block:'start'});}catch(e){}}
+top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addEventListener('pageshow',top);})();</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Communities: five problems, one root cause — Roksana Truszkowska</title>
+<meta name="description" content="Redesigning Unily’s social experience from disconnected channels bolted onto content into dedicated Communities — with membership, discovery, network effects and knowledge sharing built in from the start.">
+<meta property="og:title" content="Communities: five problems, one root cause — Roksana Truszkowska">
+<meta property="og:description" content="Redesigning Unily’s social experience from disconnected channels bolted onto content into dedicated Communities — with membership, discovery, network effects and knowledge sharing built in from the start.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&family=Instrument+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/story.css">
+</head>
+<body class="story">
+<a class="skip" href="#content">Skip to content</a>
+
+<div class="pnav-wrap" id="pnav">
+  <nav class="pnav" aria-label="Main">
+    <a href="../index.html#work" class="active">work</a>
+    <a href="../about.html">about</a>
+    <a href="mailto:roksanatruszkowska@outlook.com">email</a>
+    <a href="../cv.pdf" data-cv download="Roksana-Truszkowska-CV.pdf">cv</a>
+  </nav>
+</div>
+
+<main id="content">
+  <div class="s-wide">
+    <header class="s-head s-rv">
+      <p class="s-label">Unily · Case study · End to end</p>
+      <h1>Five problems, one root cause</h1>
+      <p class="s-sub">Redesigning Unily’s social experience from disconnected channels bolted onto content into dedicated Communities — with membership, discovery, network effects and knowledge sharing built in from the start.</p>
+      <div class="s-chips">
+        <span class="s-chip">4 min read</span>
+        <a class="s-chip" href="#deep-dive">skip to deep dive ↓</a>
+      </div>
+    </header>
+
+    <section class="s-overview s-rv" aria-label="Project overview">
+      <div class="s-meta">
+        <p class="s-label">Overview</p>
+        <dl><dt>My role</dt><dd>Product Designer — discovery research, community IA, front-end redesign, cross-feature integration</dd><dt>Team</dt><dd>1 PM, 2 engineers, 1 researcher</dd><dt>Platforms</dt><dd>Unily intranet, Communities</dd><dt>Methods</dt><dd>Discovery research, problem statements, information architecture mapping, scoping with the knowledge management teams</dd><dt>Design system</dt><dd>Built on the Futures block system and the Events object model — nothing rebuilt</dd></dl>
+      </div>
+      <div class="s-impact">
+        <p class="s-label">✦ Impact</p>
+        <div><b>5 → 1</b><p>research problems resolved by one redesign rather than five point fixes</p></div><div><b>2</b><p>existing systems reused, none rebuilt</p></div><div><b>5 / 5</b><p>original problem statements mapped directly onto shipped features</p></div>
+      </div>
+    </section>
+
+    <div class="s-hero s-rv"><video autoplay loop muted playsinline controls preload="metadata" poster="../assets/video/communities-tour-poster.jpg" aria-label="A tour of the redesigned Communities experience"><source src="../assets/video/communities-tour.webm" type="video/webm"><source src="../assets/video/communities-tour.mp4" type="video/mp4"></video></div>
+  </div>
+
+  <div class="s-read">
+    <p class="s-intro s-rv">Discovery surfaced five separate problems with the platform’s social experience. The temptation was to treat them as five pieces of work. They weren’t.</p>
+    <section class="s-chapter s-rv" id="problem">
+      <span class="s-label">01 — The problem</span>
+      <h2>Five threads that were all the same thread</h2>
+      <p>Every one of the five traced back to the same thing: <strong>social had never been designed as its own experience.</strong> It lived next to content, never connected to it.</p>
+      <div class="s-cards"><div class="s-card"><h4>Disconnected</h4><p>Channels cut off from the content they related to, so users lost the thread mid-conversation.</p></div><div class="s-card"><h4>No structure</h4><p>Only channels, no real communities — unable to compete with Viva Engage or Facebook Workplace.</p></div><div class="s-card"><h4>No network effect</h4><p>Without cross-referencing or @mentions across sites, posts couldn’t spread beyond their original audience.</p></div><div class="s-card"><h4>Too complex to set up</h4><p>Actively suppressing adoption among the community managers meant to be driving it.</p></div><div class="s-card"><h4>Scattered knowledge</h4><p>Silos and repeated work rather than a shared resource.</p></div></div>
+      <p>Reading them as one problem rather than five is what made a redesign the right answer instead of a backlog of fixes.</p>
+      <figure class="s-fig wide">
+        <div class="s-frame"><img src="../assets/img/communities/problem-statements.webp" alt="Problem statement cards with context, stakeholders, scope, impact and desired outcome" loading="lazy"><button type="button" class="s-zoom" aria-label="Enlarge image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div>
+        <figcaption>Problem statements — context, stakeholders, scope, impact and desired outcome</figcaption>
+      </figure>
+      </section>
+<section class="s-chapter s-rv" id="object">
+      <span class="s-label">02 — The object</span>
+      <h2>Communities as a first-class thing, not a feed attached to content</h2>
+      <p>Rather than patch the existing social channels one problem at a time, I mapped Communities as a distinct object in the platform’s IA: membership, a structured set of tabs — Home, About, News, Knowledge, Events — and a discovery layer for finding and requesting new ones, sitting alongside content sites rather than inside them.</p>
+      <p>One structure had to serve two very different community types: official, org-wide ones and grassroots, employee-created ones — without either feeling like an afterthought. One core object, configurable across both, rather than a generic template that fits neither.</p>
+      </section>
+<section class="s-chapter s-rv" id="discovery">
+      <span class="s-label">03 — Discovery</span>
+      <h2>Communities are useless if nobody finds them</h2>
+      <p>“Suggested for you” surfaces relevant communities automatically, so employees find and join one without being told it exists. Managers request a new community through a guided flow instead of raising a support ticket — which was the single biggest brake on adoption.</p>
+      <p>Top contributors and trending topics generate automatically from real activity and hashtags. Curating them by hand doesn’t scale, and would have reintroduced exactly the manager burden the redesign set out to remove.</p>
+      </section>
+<section class="s-deep s-rv" id="deep-dive" tabindex="0" aria-label="Deep dive: Finding, joining and running a community">
+      <div class="s-deep-head">
+        <p class="s-label">Deep dive</p>
+        <h2>Finding, joining and running a community</h2>
+        <p>The journey the redesign opened up — from discovering a community you didn’t know existed to setting one up without a support ticket.</p>
+      </div>
+      <div class="s-stage"><div class="s-shot" data-title="Discover" data-body="“Suggested for you” surfaces relevant communities automatically, so employees find and join one without being told it exists."><img src="../assets/img/communities/discover.webp" alt="The discover communities page" loading="lazy"></div><div class="s-shot" data-title="Request one, no ticket" data-body="Managers request a new community through a guided flow — removing the single biggest brake on adoption."><img src="../assets/img/communities/request-community.webp" alt="Requesting a new community through a guided form rather than a support ticket" loading="lazy"></div><div class="s-shot" data-title="A home of its own" data-body="Membership and a structured set of tabs — Home, About, News, Knowledge, Events — sitting alongside content, not inside it."><img src="../assets/img/communities/community-home.webp" alt="The redesigned community home page" loading="lazy"></div><div class="s-shot" data-title="Who’s here" data-body="The About tab: description, managers and member directory — the same object for official and grassroots communities."><img src="../assets/img/communities/about-members.webp" alt="The About tab: community description, managers and member directory" loading="lazy"></div></div>
+      <div class="s-ctrl">
+        <div class="s-step-text" aria-live="polite">
+          <p class="s-step-n"></p>
+          <p class="s-step-title"></p>
+          <p class="s-step-body"></p>
+        </div>
+        <div class="s-btns">
+          <button type="button" class="s-btn" data-prev aria-label="Previous step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button type="button" class="s-btn" data-next aria-label="Next step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+      <div class="s-dots"><button type="button" aria-label="Step 1: Discover"></button><button type="button" aria-label="Step 2: Request one, no ticket"></button><button type="button" aria-label="Step 3: A home of its own"></button><button type="button" aria-label="Step 4: Who’s here"></button></div>
+      <p class="s-hint">Use the arrow keys or buttons to step through</p>
+    </section>
+<section class="s-chapter s-rv" id="reuse">
+      <span class="s-label">04 — Reuse</span>
+      <h2>Two existing systems, no parallel build</h2>
+      <p>Communities run on the block system from Unily Futures — card grids for trending topics and contributors, the Events block for the “Upcoming events” widget — rather than a bespoke component set.</p>
+      <p>That is also why Events could appear meaningfully inside a Community with no additional engineering: the object model already existed. The Knowledge tab was scoped directly with the teams already responsible for knowledge management, so Communities became a surface for existing knowledge tools rather than a competing one.</p>
+      <figure class="s-fig">
+        <div class="s-frame"><img src="../assets/img/communities/home-feed.webp" alt="The communities feed with contributors and trending topics generated from activity" loading="lazy"><button type="button" class="s-zoom" aria-label="Enlarge image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div>
+        <figcaption>The feed — contributors and trending topics generated from activity, not curated by hand</figcaption>
+      </figure>
+      <aside class="s-callout"><span class="s-label">The call I’d defend</span><h3>Integrated into the platform, not a separate social product</h3><p>Building a standalone social platform was the cleaner engineering story, and it would have recreated the “disconnected from content” problem at a bigger scale while duplicating infrastructure that already existed.</p><p>Communities went into the existing platform IA instead, reusing the systems already built. Social feels like part of the product rather than a bolt-on — <em>which was the original problem, stated as a solution.</em></p></aside>
+      </section>
+<section class="s-chapter s-rv" id="outcome">
+      <span class="s-label">05 — Where it stands</span>
+      <h2>Every finding got a full answer, not a partial one</h2>
+      <p>Communities has not launched, so there are no post-launch numbers to report. Membership growth, communities created, setup time and manager feedback are what it will be judged on.</p>
+      <p>The clearest pre-launch signal was how directly the five original problem statements mapped onto shipped features. Every research finding had a full answer in the final design rather than a partial one — which is the test I’d apply to any redesign that starts from a list of complaints.</p>
+      <h3>The same posts, either side of the redesign</h3>
+      <p>Before, social was a channel stream: every post in one undifferentiated list. After, the feed is built from the communities you belong to — each post attributed to its community, alongside contributors and trending topics generated from the activity itself.</p>
+      <div class="s-raw"><figure class="ba">
+        <div class="ba-stage" style="--p:50%">
+          <img src="../assets/img/communities/feed-after.webp" alt="The redesigned communities home feed">
+          <div class="ba-clip">
+            <img src="../assets/img/communities/feed-before.webp" alt="The old social channel conversation stream">
+          </div>
+          <input class="ba-range" type="range" aria-label="Reveal the feed before and after" max="100" min="0" step="1" value="50">
+          <div class="ba-line">
+            <div class="ba-knob">
+              ‹›
+            </div>
+          </div>
+          <span class="ba-tag l">Before</span>
+          <span class="ba-tag r">After</span>
+        </div>
+        <figcaption>Drag the handle — or use the arrow keys — to compare.</figcaption>
+      </figure></div>
+      </section>
+
+    <section class="s-reflect s-rv">
+      <p class="s-label">Reflection and learnings</p>
+      <h2>Reuse surfaces edge cases nobody owns</h2>
+      <p>The biggest lesson: building on existing systems was the right call, and it means the edges between systems need as much design as the screens.</p>
+      <h3>What I got wrong</h3>
+      <div class="s-lessons"><div class="s-lesson"><b>01</b><p>Reusing the Event object inside Communities surfaced edge cases neither team had scoped — what happens to a community-hosted event if the community is archived, for one.</p></div><div class="s-lesson"><b>02</b><p>Automated trending topics needed real usage data to tune. Early internal testing produced either too few topics or ones that felt arbitrary, until the thresholds were adjusted.</p></div><div class="s-lesson"><b>03</b><p>Migrating existing social channel content into the new structure wasn’t scoped as tightly as the net-new experience, and needed more dedicated design time than planned.</p></div></div>
+      <h3>What happens next</h3>
+      <div class="s-lessons s-next"><div class="s-lesson"><b>01</b><p>Notifications for community activity — mentions, replies and trending posts. The clearest next lever for the network effect.</p></div><div class="s-lesson"><b>02</b><p>Community-level analytics, so managers see adoption without relying on platform-wide reporting.</p></div><div class="s-lesson"><b>03</b><p>Purpose-built templates. A practice guild and an interest group don’t need the same shape, and that’s worth designing for.</p></div></div>
+      <p class="s-closing">Social feels like part of the product rather than a bolt-on — which was the original problem, stated as a solution.</p>
+    </section>
+  </div>
+
+  <div class="s-wide">
+    <section class="s-others s-rv" aria-label="Other case studies">
+      <p class="s-label">Other case studies</p>
+      <div class="s-others-grid"><a class="s-other" href="portal-blocks.html"><span class="s-label">Unily Futures · 0 → 1 design system</span><h3>A block system a CMS editor and an AI agent can both build with</h3><span class="s-arrow" aria-hidden="true">→</span></a><a class="s-other" href="notifications.html"><span class="s-label">Unily · Flagship feature</span><h3>What to ship first when everything is broken</h3><span class="s-arrow" aria-hidden="true">→</span></a><a class="s-other" href="events.html"><span class="s-label">Unily · Object model</span><h3>From content workaround to first-class capability</h3><span class="s-arrow" aria-hidden="true">→</span></a></div>
+      <a class="s-back" href="../index.html#work">← back to home</a>
+    </section>
+    <footer class="s-foot">
+      <p class="s-label">© 2026 Roksana Truszkowska</p>
+      <p class="s-label">Designed &amp; built with ♥ (&amp; coffee)</p>
+    </footer>
+  </div>
+</main>
+
+<script src="../assets/js/main.js" defer></script>
+<script src="../assets/js/story.js" defer></script>
+<script src="../assets/js/cv.js" defer></script>
+</body>
+</html>
