@@ -6,7 +6,9 @@ browser. Deploy by uploading this folder as-is.
 ## Structure
 
 ```
-index.html                  home — hero, the many hats, work, quotes
+index.html                  home — intro bento, selected work, about, find me
+about.html                  about — photo, bio, the many hats
+article.html                article — how AI shows up in my design process
 work/portal-blocks.html     case study 1
 work/notifications.html     case study 2
 work/events.html            case study 3
@@ -18,9 +20,11 @@ assets/
   css/layout.css            .wrap, nav, hero, sections, grids, footer
   css/components.css        sticky notes, quotes, media, before/after, stickers
   css/case-study.css        case-study page shape: hero, meta, beats, reflection
+  css/story.css             the case study layout: overview, chapters, deep dive, reflection
   js/main.js                nav hairline, reveal on scroll, video autoplay,
                             long-page scrollers, compare slider
   js/stickers.js            positions the scattered stickers and their parallax
+  js/story.js               case study interactions: lightbox, deep-dive stepper, nav
   img/stickers/             the image stickers used on the Portal Blocks case study
   img/cards/                the animated loops on the home page work cards
   img/<project>/            screenshots, per case study
