@@ -1,0 +1,491 @@
+/* ============================================================
+   Components — the reusable pieces that appear on more than one
+   page: notes, quotes, gap markers, media, diagrams, stickers.
+   ============================================================ */
+
+/* --- media --------------------------------------------------
+   Every screenshot and video sits inside a 1px hairline.       */
+.shot { border: 1px solid var(--line); }
+
+video.shot { width: 100%; height: auto; display: block; background: #fff; }
+/* Work-card videos are decorative — never intercept the click. */
+.item video.shot { pointer-events: none; }
+
+/* --- sticky notes -------------------------------------------
+   Two uses: the "many hats" wall on the home page, and the
+   reflections inside a case study. Shared paper, different size
+   and pigment. The slight rotation is deliberate.              */
+.sticky {
+  min-height: 132px;
+  padding: 1.35rem 1.25rem;
+  background: var(--note-yellow);
+  color: var(--note-ink);
+  font-size: .86rem;
+  line-height: 1.62;
+  box-shadow: 0 1px 2px rgba(17, 17, 20, .05), 0 6px 14px rgba(17, 17, 20, .06);
+  transition: transform .25s var(--ease);
+}
+.sticky:nth-child(4n+1) { transform: rotate(-.8deg); }
+.sticky:nth-child(4n+2) { transform: rotate(.7deg);  background: var(--note-yellow-2); }
+.sticky:nth-child(4n+3) { transform: rotate(.5deg);  background: var(--note-yellow-3); }
+.sticky:nth-child(4n+4) { transform: rotate(-.5deg); }
+.sticky:hover { transform: rotate(0) translateY(-2px); }
+
+.sticky .h4 {
+  margin: 0 0 .5rem;
+  color: var(--note-ink-head);
+  font-family: var(--disp);
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: -.02em;
+}
+.sticky p { margin: 0; }
+.sticky .gap { color: #7A6A23; border-bottom-color: #B9A64E; }
+
+/* A note that holds someone else's words. */
+.note-quote { display: flex; flex-direction: column; justify-content: center; }
+.note-quote .qt {
+  margin: 0 0 .9rem;
+  color: var(--note-ink-head);
+  font-family: var(--disp);
+  font-weight: 500;
+  font-size: 1.12rem;
+  letter-spacing: -.02em;
+  line-height: 1.34;
+}
+.note-quote .who { color: #6E6A55; font-size: .78rem; }
+
+/* Reflection notes, two to a column. */
+.stickies { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; margin-top: 1.2rem; }
+@media (max-width: 560px) { .stickies { grid-template-columns: 1fr; } }
+
+/* The "many hats" wall — bigger notes, apricot → lilac ramp. */
+.hatnotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.3rem; }
+.hatnotes .sticky {
+  min-height: 172px;
+  padding: 1.5rem 1.4rem;
+  color: #3A3A34;
+  box-shadow: 0 1px 2px rgba(17, 17, 20, .045), 0 6px 16px rgba(17, 17, 20, .055);
+}
+.hatnotes .sticky:nth-child(1) { background: var(--hat-1); }
+.hatnotes .sticky:nth-child(2) { background: var(--hat-2); }
+.hatnotes .sticky:nth-child(3) { background: var(--hat-3); }
+.hatnotes .sticky:nth-child(4) { background: var(--hat-4); }
+.hatnotes .sticky:nth-child(5) { background: var(--hat-5); }
+.hatnotes .sticky:nth-child(6) { background: var(--hat-6); }
+@media (max-width: 880px) { .hatnotes { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .hatnotes { grid-template-columns: 1fr; } }
+
+/* --- a wall of notes ------------------------------------------
+   Research findings as sticky notes, stacked in a visual column.
+   Same paper as the home page's hats, sized by their content
+   rather than a minimum, and kept to a few lines each.          */
+.notewall {
+  display: grid;
+  gap: 1.1rem;
+}
+.notewall .sticky {
+  min-height: 0;
+  padding: 1.5rem 1.4rem;
+  color: #3A3A34;
+  box-shadow: 0 1px 2px rgba(17, 17, 20, .045), 0 6px 16px rgba(17, 17, 20, .055);
+}
+.notewall .sticky:nth-child(1) { background: var(--hat-1); }
+.notewall .sticky:nth-child(2) { background: var(--hat-4); }
+.notewall .sticky:nth-child(3) { background: var(--hat-6); }
+
+.notewall ul { margin: .55rem 0 0; padding-left: 1.05rem; }
+.notewall li { margin-bottom: .3rem; }
+.notewall .opp { display: block; margin-top: .8rem; color: var(--note-ink-head); }
+.notewall .opp b { font-weight: 500; }
+
+/* --- quote --------------------------------------------------- */
+.quote { max-width: 52ch; }
+.quote p {
+  margin: 0 0 1rem;
+  font-family: var(--disp);
+  font-weight: 400;
+  font-size: clamp(1.15rem, 1.9vw, 1.5rem);
+  letter-spacing: -.025em;
+  line-height: 1.38;
+}
+.quote .who { color: var(--faint); font-size: var(--fs-xs); }
+
+/* --- placeholders -------------------------------------------
+   .todo  — a dashed panel standing in for something not yet made
+   .gap   — an inline marker for a fact still to be confirmed
+   Both are intentionally visible. Delete them as they get filled. */
+.todo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 180px;
+  padding: 2rem;
+  border: 1px dashed var(--line);
+}
+.v .todo { min-height: 220px; }
+.todo .lbl {
+  margin-bottom: .6rem;
+  color: var(--faint);
+  font-size: .72rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.todo p { margin: 0; max-width: 42ch; color: var(--mut); font-size: .88rem; }
+
+.gap {
+  display: inline-block;
+  color: var(--faint);
+  font-size: .72rem;
+  white-space: nowrap;
+  border-bottom: 1px dashed var(--faint);
+}
+
+/* Two dashed panels side by side (the quotes still to gather). */
+.todo-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--col-gap);
+  margin: 2rem 0 var(--beat-y);
+}
+@media (max-width: 820px) { .todo-pair { grid-template-columns: 1fr; gap: 1.5rem; } }
+
+/* --- under-construction panel -------------------------------- */
+.wip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+  padding: 2.6rem 2rem;
+  text-align: center;
+  border: 1px dashed var(--line-strong);
+  background-image: repeating-linear-gradient(45deg, rgba(255, 90, 31, .055) 0 10px, transparent 10px 22px);
+}
+.wip svg { width: 96px; height: auto; margin-bottom: 1.2rem; }
+.wip .t1 {
+  margin-bottom: .5rem;
+  font-family: var(--disp);
+  font-weight: 500;
+  font-size: 1.02rem;
+  letter-spacing: -.02em;
+}
+.wip .t2 { max-width: 34ch; margin: 0 auto; color: var(--mut); font-size: .86rem; }
+
+/* --- screens that arrive with their own corners ---------------
+   Exported UI shots already have a radius and a transparent
+   surround, so they take a soft shadow instead of the hairline
+   border every other image gets. drop-shadow follows the alpha,
+   which is why it hugs the rounded corners.                    */
+.raised {
+  filter: drop-shadow(0 1px 2px rgba(17, 17, 20, .05))
+          drop-shadow(0 10px 24px rgba(17, 17, 20, .10));
+}
+
+/* --- before → after ------------------------------------------
+   Two screens side by side with an arrow between them. Used where
+   the two states are different shapes and a wipe would compare
+   the wrong halves.                                             */
+.beforeafter {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: stretch;
+  gap: 2rem;
+  margin: 1.8rem 0 0;
+}
+/* Label, screen, caption: three rows, so the labels line up at the
+   top and the captions at the bottom whatever the screens' heights. */
+.beforeafter figure {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  margin: 0;
+  text-align: center;
+}
+.beforeafter figure img { align-self: center; }
+.beforeafter img { max-width: 100%; max-height: 470px; width: auto; margin: 0 auto; }
+.beforeafter .step {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--faint);
+  font-size: .72rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.beforeafter figcaption {
+  max-width: 30ch;
+  margin: 1.1rem auto 0;
+  color: var(--mut);
+  font-size: var(--fs-xs);
+}
+.beforeafter .mark {
+  align-self: center;
+  justify-self: center;   /* content-sized, so rotating it on mobile
+                             doesn't sweep a full-width box over the images */
+  color: var(--faint);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+@media (max-width: 720px) {
+  .beforeafter { grid-template-columns: 1fr; gap: 1.4rem; }
+  .beforeafter .mark { transform: rotate(90deg); }
+}
+
+/* Screens side by side, two or three across. They sit inside the
+   column at their own size or a little under it — never scaled up,
+   which is what keeps the UI text crisp. */
+.pair,
+.trio {
+  display: grid;
+  margin-top: 1.8rem;
+  align-items: stretch;
+}
+.pair { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+.trio { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+
+.pair figure,
+.trio figure {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  margin: 0;
+  text-align: center;
+}
+.pair img,
+.trio img { align-self: center; margin: 0 auto; }
+
+.pair figcaption,
+.trio figcaption {
+  max-width: 34ch;
+  margin: 1.1rem auto 0;
+  color: var(--mut);
+  font-size: var(--fs-xs);
+}
+
+@media (max-width: 820px) { .trio { grid-template-columns: 1fr; gap: 2rem; } }
+@media (max-width: 720px) { .pair { grid-template-columns: 1fr; gap: 2rem; } }
+
+/* --- before / after comparison -------------------------------
+   A range input at opacity 0 covers the stage, so dragging and
+   the arrow keys both work. --p is the reveal position.        */
+.ba { margin: 1.6rem 0 0; }
+.ba-stage {
+  position: relative;
+  overflow: hidden;
+  line-height: 0;
+  border: 1px solid var(--line);
+  touch-action: pan-y;
+}
+.ba-stage img { width: 100%; display: block; user-select: none; -webkit-user-drag: none; }
+.ba-clip {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  clip-path: inset(0 calc(100% - var(--p, 50%)) 0 0);
+}
+.ba-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--p, 50%);
+  width: 2px;
+  margin-left: -1px;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(17, 17, 20, .25);
+  pointer-events: none;
+}
+.ba-knob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid rgba(17, 17, 20, .18);
+  box-shadow: 0 2px 10px rgba(17, 17, 20, .18);
+  color: #111114;
+  font-family: var(--sans);
+  font-size: .95rem;
+  letter-spacing: .14em;
+}
+.ba-tag {
+  position: absolute;
+  top: 12px;
+  padding: .28rem .6rem;
+  background: rgba(255, 255, 255, .92);
+  border: 1px solid var(--line);
+  color: #111114;
+  font-family: var(--sans);
+  font-size: .66rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+.ba-tag.l { left: 12px; }
+.ba-tag.r { right: 12px; }
+.ba-range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+  background: none;
+  -webkit-appearance: none;
+          appearance: none;
+}
+.ba-range::-webkit-slider-thumb { -webkit-appearance: none; width: 44px; height: 100%; }
+.ba-range:focus-visible { outline: none; }
+.ba-range:focus-visible + .ba-line .ba-knob { outline: 2px solid #111114; outline-offset: 3px; }
+.ba figcaption { margin-top: .8rem; color: var(--mut); font-size: var(--fs-xs); }
+
+/* --- inline diagrams ----------------------------------------- */
+.diagram {
+  margin-top: 1.7rem;
+  padding: 1.8rem;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+.diagram svg { width: 100%; height: auto; display: block; }
+/* Labels inherit the page's fonts; .d marks the display face.
+   Diagram labels fall back to Poppins rather than a system face, so
+   a diagram still reads as part of the page if the display font is
+   slow or blocked. */
+.diagram text   { font-family: var(--sans); }
+.diagram text.d { font-family: 'Bricolage Grotesque', var(--sans); }
+@media (max-width: 720px) {
+  .diagram { padding: .9rem; overflow-x: auto; }
+  .diagram svg { min-width: 640px; }
+}
+
+/* --- long-page scroller ---------------------------------------
+   A full-page screenshot is 4,000px tall. Shrunk to fit a column
+   it becomes an unreadable sliver, so it gets framed like a window
+   instead: the page scrolls inside the frame as you scroll past
+   it, at a size you can actually read, and a hairline along the
+   bottom tracks how far through the page you are.
+
+   Enhancement only. Without JavaScript the frame never goes .live
+   and the whole image is shown, exactly as it was before.       */
+.scroller {
+  position: relative;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+.scroller img { width: 100%; height: auto; display: block; }
+
+.scroller.live { aspect-ratio: 4 / 5; overflow: hidden; }
+.scroller.live img { position: absolute; top: 0; left: 0; will-change: transform; }
+
+.scroller .track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--line);
+  opacity: 0;
+  transition: opacity .3s;
+}
+.scroller.live .track { opacity: 1; }
+.scroller .track span { display: block; height: 100%; width: 0; background: var(--txt); }
+
+@media (prefers-reduced-motion: reduce) {
+  .scroller.live { aspect-ratio: auto; }
+  .scroller.live img { position: static; transform: none; }
+  .scroller .track { display: none; }
+}
+
+/* --- figure ---------------------------------------------------- */
+.fig { margin: 1.8rem 0 0; }
+
+/* Three screens at one scale, side by side. */
+.trio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 1.8rem;
+}
+.trio .fig { margin: 0; }
+@media (max-width: 820px) { .trio { grid-template-columns: 1fr; } }
+.fig figcaption {
+  max-width: 66ch;
+  margin-top: .8rem;
+  color: var(--mut);
+  font-size: var(--fs-xs);
+}
+
+/* --- faint square grid ---------------------------------------
+   Graph paper behind the top of a page — the title and the demo
+   above it — then masked out so it dissolves rather than stopping.
+   Deliberately at the edge of visibility: it should register as
+   texture, not as a grid.
+   It lives on a pseudo-element so the mask fades the grid alone
+   and leaves the content over it untouched.                     */
+.cs-grid { position: relative; }
+
+.cs-grid::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: var(--grid-depth);
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right,  var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: var(--grid-cell) var(--grid-cell);
+  background-position: center top;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 38%, transparent 100%);
+          mask-image: linear-gradient(to bottom, #000 0%, #000 38%, transparent 100%);
+}
+
+@media (max-width: 820px) {
+  .cs-grid::before { height: calc(var(--grid-depth) * .72); }
+}
+
+/* --- scattered stickers --------------------------------------
+   Decorative only, injected by js/stickers.js and hidden on any
+   screen too narrow to hold them without crowding the text.    */
+.stickers { position: absolute; inset: 0; z-index: 0; overflow: visible; pointer-events: none; }
+.stk { position: absolute; pointer-events: none; will-change: transform; }
+.stk svg,
+.stk img { width: 100%; height: auto; display: block; }
+
+/* Any element hosting a sticker layer becomes the frame for it,
+   and everything else inside it stays above the stickers. */
+.has-stickers { position: relative; }
+.has-stickers > *:not(.stickers) { position: relative; z-index: 1; }
+.stk.word {
+  padding: .42rem .8rem;
+  background: #fff;
+  border: 3px solid var(--stk-navy);
+  box-shadow: 0 0 0 7px #fff;
+  color: var(--stk-navy);
+  font-family: var(--disp);
+  font-weight: 500;
+  font-size: var(--fs-xs);
+  letter-spacing: -.01em;
+  white-space: nowrap;
+}
+.stk.word.tint  { background: #FBE38A; }
+.stk.word.tint2 { background: #D9E9F2; }
+@media (max-width: 1240px) { .stickers { display: none; } }
+
+/* --- reveal on scroll ---------------------------------------- */
+.rv {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity var(--reveal-dur) var(--ease), transform var(--reveal-dur) var(--ease);
+}
+.rv.in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rv { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+  .sticky { transition: none; }
+}

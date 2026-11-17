@@ -1,0 +1,71 @@
+/* ============================================================
+   Case study — the page shape every project write-up follows:
+   hero → meta → numbered beats → pull → reflection → next
+   ============================================================ */
+
+.cs-hero { padding: 10rem 0 3rem; }
+.cs-hero .display { max-width: 20ch; margin: 1.2rem 0 1.5rem; }
+
+/* --- meta: facts on the left, numbers on the right ----------- */
+.cs-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--col-gap);
+  margin-top: 3rem;
+  padding: 2.6rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.mrow { display: flex; gap: 1.4rem; padding: .55rem 0; font-size: var(--fs-sm); }
+.mrow span:first-child { flex: none; width: 96px; color: var(--faint); font-size: .8rem; }
+
+.tile { display: flex; align-items: baseline; gap: 1.4rem; padding: .55rem 0; }
+.tile .n {
+  flex: none;
+  width: 96px;
+  font-family: var(--disp);
+  font-weight: 500;
+  font-size: 1.3rem;
+  letter-spacing: -.03em;
+}
+.tile .l { color: var(--mut); font-size: .9rem; }
+
+@media (max-width: 820px) { .cs-meta { grid-template-columns: 1fr; gap: 2rem; } }
+
+/* --- beats ---------------------------------------------------
+   A beat is one numbered step of the story. Two-column beats use
+   .split (layout.css); .beat is the full-width variant.        */
+.beat-n { display: block; margin-bottom: .8rem; color: var(--faint); font-size: .8rem; }
+
+.beat { padding: var(--beat-y) 0; border-top: 1px solid var(--line); }
+.beat.open { border-top: 0; }   /* first beat, under a rule already drawn */
+.beat .body { max-width: var(--measure-beat); }
+
+/* First paragraph after a beat heading gets a little air. */
+.h2 + .body { margin-top: 1rem; }
+
+/* --- pull: the decision that mattered ------------------------ */
+.pull { padding: var(--beat-y) 0; border-top: 1px solid var(--line); }
+.pull .h2 { max-width: 26ch; }
+.pull .body { max-width: var(--measure-pull); }
+.pull .h2 + .body { margin-top: 1.1rem; }
+
+/* --- reflection ---------------------------------------------- */
+.reflect { padding: var(--beat-y) 0; border-top: 1px solid var(--line); }
+.reflect .cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--col-gap);
+  margin-top: 1.6rem;
+}
+@media (max-width: 1000px) { .reflect .cols { grid-template-columns: 1fr; gap: 2.4rem; } }
+
+/* --- next project -------------------------------------------- */
+.nextnav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  padding: 3rem 0;
+  border-top: 1px solid var(--line);
+}
+@media (max-width: 720px) { .nextnav { grid-template-columns: 1fr; gap: 1.6rem; } }

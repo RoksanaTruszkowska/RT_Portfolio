@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>/* always open a page at the top (unless a #section was linked) */
+try{history.scrollRestoration='manual';}catch(e){}
+(function(){function top(){if(location.hash)return;window.scrollTo(0,0);try{document.documentElement.scrollIntoView({block:'start'});}catch(e){}}
+top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addEventListener('pageshow',top);})();</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How AI shows up in my design process — Roksana Truszkowska</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&family=Instrument+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@300;400&display=swap">
+<style>
+  :root {
+    --mauve: #D97B4A; --mauve-deep: #1A2440; --mauve-text: #B04A1E;
+    --linen: #FCFAF6; --tan: #E58A5C; --tan-light: #F6D5C2; --tan-text: #B04A1E;
+    --ink: #141312; --muted: #5A5653; --line: rgba(20, 19, 18, 0.12);
+    --radius: 10px;
+    --font-display: 'Inclusive Sans', Georgia, serif;
+    --font-body: 'Instrument Sans', system-ui, sans-serif;
+    --font-mono: 'DM Mono', ui-monospace, monospace;
+    --ease: cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    min-height: 100vh; padding: 120px 24px 56px;
+    font-family: var(--font-body); font-weight: 300; font-size: 15.5px; line-height: 1.7; color: var(--ink);
+    background-color: var(--linen);
+    background-image:
+      radial-gradient(70% 50% at 8% 6%, rgba(224,122,74,0.16) 0%, transparent 70%),
+      radial-gradient(55% 45% at 92% 12%, rgba(242,185,143,0.24) 0%, transparent 65%),
+      radial-gradient(60% 50% at 75% 60%, rgba(224,122,74,0.09) 0%, transparent 60%),
+      radial-gradient(70% 45% at 12% 80%, rgba(242,185,143,0.15) 0%, transparent 65%);
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+  }
+  a { color: inherit; text-decoration: none; }
+  :focus-visible { outline: 2px solid var(--mauve-deep); outline-offset: 3px; border-radius: 8px; }
+
+  .wrap { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+  .label { font-family: var(--font-mono); font-size: 11px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  .card { background: #FFFFFF; border-radius: var(--radius); padding: 36px; }
+  em { font-family: var(--font-display); font-style: italic; color: var(--mauve-text); }
+
+  /* nav */
+  .nav-wrap { position: fixed; top: 32px; left: 0; right: 0; z-index: 100; display: flex; justify-content: center; transition: opacity .35s var(--ease), transform .35s var(--ease); }
+  .nav-wrap.hidden { opacity: 0; transform: translateY(-12px); pointer-events: none; }
+  .nav { display: flex; gap: 2px; padding: 5px; border-radius: 100px; background: rgba(250,249,244,.88); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); box-shadow: 0 2px 24px rgba(20,19,18,.10); }
+  .nav a { display: inline-flex; align-items: center; min-height: 32px; padding: 5px 15px; border-radius: 100px; font-size: 13px; font-weight: 400; color: var(--muted); transition: color 150ms, background 150ms; }
+  .nav a:hover, .nav a.active { color: var(--ink); background: rgba(20,19,18,.07); }
+
+  /* hero */
+  .hero { padding: 44px 36px 40px; display: flex; flex-direction: column; gap: 14px; }
+  .hero h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(32px, 5vw, 48px); line-height: 1.05; letter-spacing: -0.02em; max-width: 18ch; }
+  .lede { font-size: 18px; line-height: 1.6; color: var(--muted); max-width: 58ch; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+  .tag { padding: 4px 10px; border-radius: 100px; border: 1px solid rgba(20,19,18,.18); font-size: 12px; color: var(--muted); }
+
+  /* map of phases */
+  .map { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .map a { display: flex; flex-direction: column; gap: 6px; padding: 20px; border-radius: 10px; min-height: 120px; transition: transform 400ms var(--ease), box-shadow 400ms var(--ease); }
+  .map a:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(20,19,18,.10); }
+  .map b { font-family: var(--font-display); font-weight: 400; font-size: 19px; }
+  .map span:last-child { font-size: 13px; line-height: 1.5; color: var(--ink); }
+  .map a:nth-child(1) { background: #F6D5C2; } .map a:nth-child(2) { background: #F0EAE1; } .map a:nth-child(3) { background: #F5EFE7; }
+  .map a:nth-child(4) { background: #FDF4EE; } .map a:nth-child(5) { background: #F9E6DA; } .map a:nth-child(6) { background: #F7E9DF; }
+
+  /* sections */
+  .step { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 32px; scroll-margin-top: 100px; }
+  .step-head { display: flex; flex-direction: column; gap: 10px; }
+  .step h2 { font-family: var(--font-display); font-weight: 400; font-size: 26px; line-height: 1.2; }
+  .step-body { display: flex; flex-direction: column; gap: 14px; color: var(--muted); }
+  .step-body strong { font-weight: 500; color: var(--ink); }
+  .uses { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 2px; }
+  .uses li { display: flex; gap: 10px; }
+  .uses li::before { content: ""; flex-shrink: 0; width: 6px; height: 6px; margin-top: 10px; border-radius: 50%; background: var(--tan); }
+  .rule {
+    margin-top: 4px; padding: 14px 16px; border-radius: 10px;
+    background: rgba(224,122,74,.10); color: var(--ink); font-size: 14.5px;
+  }
+  .rule .label { display: block; margin-bottom: 4px; color: var(--mauve-text); }
+  .example { padding: 16px 18px; border-radius: 10px; background: rgba(242, 185, 143, 0.18); color: var(--ink); font-size: 14.5px; }
+  .example .label { display: block; margin-bottom: 6px; color: var(--tan-text); }
+
+  /* closing */
+  .close { color: #FAF9F4; background: linear-gradient(150deg, #283657 0%, #121A30 60%, #0B1122 100%); }
+  .close .label { color: #DDD8D3; }
+  .close h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(24px, 3.4vw, 32px); line-height: 1.25; margin: 10px 0 14px; max-width: 26ch; }
+  .close p { color: #DDD8D3; max-width: 60ch; }
+  .close em { color: var(--tan-light); }
+
+  .next { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .next a { display: flex; flex-direction: column; gap: 6px; padding: 18px 22px; border-radius: var(--radius); background: #FFFFFF; transition: transform 300ms var(--ease), box-shadow 300ms var(--ease); }
+  .next a:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(20,19,18,.08); }
+  .next a .label { color: var(--muted); }
+  .next h3 { font-family: var(--font-display); font-weight: 400; font-size: 18px; }
+
+  footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; padding: 24px 8px 0; }
+
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity 700ms var(--ease), transform 700ms var(--ease); }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    *, *::before, *::after { transition: none !important; }
+  }
+  @media (max-width: 760px) {
+    .step { grid-template-columns: 1fr; gap: 14px; }
+    .map { grid-template-columns: 1fr 1fr; }
+    .next { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    body { padding: 96px 14px 40px; }
+    .card, .hero { padding: 26px 20px; }
+    .nav-wrap { top: 20px; }
+    .nav a { padding: 5px 11px; }
+  }
+
+  /* faint dotted grid */
+  body::after {
+    content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image: radial-gradient(circle, rgba(20, 19, 18, 0.08) 0.8px, transparent 1.2px);
+    background-size: 14px 14px;
+    -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 35%, #000 30%, transparent 100%);
+    mask-image: radial-gradient(ellipse 90% 80% at 50% 35%, #000 30%, transparent 100%);
+  }
+</style>
+</head>
+<body>
+
+<div class="nav-wrap" id="navWrap">
+  <nav class="nav" aria-label="Main">
+    <a href="index.html#work">work</a>
+    <a href="about.html">about</a>
+    <a href="index.html#contact">email</a>
+    <a href="cv.pdf" data-cv download="Roksana-Truszkowska-CV.pdf">cv</a>
+  </nav>
+</div>
+
+<main class="wrap">
+
+  <header class="card hero reveal">
+    <p class="label">Article · AI in practice</p>
+    <h1>How AI shows up in my <em>design process</em></h1>
+    <p class="lede">I work with AI every day, both in how I design and in what I'm designing. This is where it fits for me: from research to the last stakeholder update, and the few places I deliberately keep it out.</p>
+    <div class="meta">
+      <span class="tag">Research</span><span class="tag">Synthesis</span><span class="tag">Ideation</span>
+      <span class="tag">Prototyping</span><span class="tag">Design systems</span><span class="tag">Communication</span>
+    </div>
+  </header>
+
+  <nav class="map reveal" aria-label="Sections">
+    <a href="#research"><span class="label">01</span><b>Research</b><span>Prep faster, so more time goes to the people.</span></a>
+    <a href="#synthesis"><span class="label">02</span><b>Synthesis</b><span>A second pair of eyes on the patterns.</span></a>
+    <a href="#ideation"><span class="label">03</span><b>Ideation</b><span>Wider, then stress-tested.</span></a>
+    <a href="#prototyping"><span class="label">04</span><b>Prototyping</b><span>From static frames to things you can click.</span></a>
+    <a href="#systems"><span class="label">05</span><b>Design systems</b><span>Rules a machine can check.</span></a>
+    <a href="#communication"><span class="label">06</span><b>Communication</b><span>The right story for each room.</span></a>
+  </nav>
+
+    <section id="setup" class="card step reveal">
+      <div class="step-head">
+        <span class="label">The setup</span>
+        <h2>I don't just use AI tools, I build them</h2>
+      </div>
+      <div class="step-body">
+        <p>Most of the value comes from how AI is wired into my work, not which chat window I open. I like building the setup myself, and sharing it so other people can use it too.</p><ul class="uses"><li><span><strong>MCPs everywhere:</strong> I connect AI to the tools I already use, so it works with real context instead of copy-paste. I wrote a guide to the Mobbin MCP so engineers and designers could start using it too.</span></li><li><span><strong>Custom Claude plugins:</strong> I build plugins and systems with the relevant skills bundled in, such as a research plugin that carries a study from planning to synthesis.</span></li><li><span><strong>Prototypes on the real system:</strong> I prototype in Claude Code with our design system connected, so what I show is built from real components.</span></li><li><span><strong>Vibe-coded tools:</strong> When I need something specific, I build it, instead of relying on a product to cover it.</span></li></ul>
+      </div>
+    </section>
+
+  <section id="research" class="card step reveal">
+    <div class="step-head">
+      <span class="label">01 — Research</span>
+      <h2>Prep faster, so more time goes to the people</h2>
+    </div>
+    <div class="step-body">
+      <p>Research is where I'm most careful with AI, and also where it saves the most time before anyone is in the room. It gets me to a strong starting point quickly, so my energy goes into the sessions and the sources that matter.</p><ul class="uses"><li>Getting through background reading fast, then going straight to the studies worth reading in full</li><li>Drafting discussion guides and usability scripts from a brief, then rewriting them in my own voice</li><li>Checking questions for bias and leading language before they reach a participant</li><li>Running research through a custom Claude plugin I built, with the skills for each step bundled in, so every study starts from the same solid setup</li></ul><div class="example"><span class="label">In practice · Notifications</span><p>Notifications research ran in three streams: academic work on interruption, competitive analysis and our own user and stakeholder research. AI helped me cover the academic side quickly, so I could go deep on the findings that shaped the design: mid-task interruptions do the most damage, batched digests protect focus, and turning notifications off backfires.</p></div><p class="rule"><span class="label">My rule</span>The conversations stay human. I'm in the room, I take my own notes, and I don't hand anyone's words to a tool without checking what's allowed.</p>
+    </div>
+  </section>
+
+  <section id="synthesis" class="card step reveal">
+    <div class="step-head">
+      <span class="label">02 — Synthesis</span>
+      <h2>A second pair of eyes on the patterns</h2>
+    </div>
+    <div class="step-body">
+      <p>After 20+ discovery sessions and usability tests, the hard part isn't having data, it's seeing what it's telling you. I do the first pass myself, then use AI as a sparring partner.</p><ul class="uses"><li>Comparing my affinity map with an independent clustering, to spot what I've over- or under-weighted</li><li>Expanding problem statements into user stories and sets of "How might we" questions</li><li>Asking it to argue against my reading, to surface the finding I'm too close to see</li></ul><div class="example"><span class="label">In practice · Notifications</span><p>Seven research themes became eight problem statements, each with a user story and its own How Might We questions. AI helped me draft and pressure-test the questions. The framing calls stayed mine, like naming notification settings as a problem in itself, which stopped the design defaulting to "add another setting".</p></div><p class="rule"><span class="label">My rule</span>AI can suggest a pattern; only the evidence can confirm it. Every theme has to trace back to something a real person said or did.</p>
+    </div>
+  </section>
+
+  <section id="ideation" class="card step reveal">
+    <div class="step-head">
+      <span class="label">03 — Ideation</span>
+      <h2>Wider, then stress-tested</h2>
+    </div>
+    <div class="step-body">
+      <p>I'm happiest finding the one interaction worth doing differently. AI helps me get to more options faster, so the one I defend has had more competition.</p><ul class="uses"><li>Generating alternative flows and the edge cases I haven't drawn yet</li><li>Producing realistic, messy content (long headlines, missing images, awkward copy) to break layouts on purpose</li><li>Rewriting UI copy in different tones to hear how a screen reads</li></ul><div class="example"><span class="label">In practice · Unily Futures</span><p>On Futures, most broken pages traced back to content, not layout: headlines, copy and images falling outside what a block was built to hold. Feeding blocks deliberately extreme content is how you find those limits early. It's why the final system uses character ranges, capped card counts and enforced image crops rather than open fields.</p></div>
+    </div>
+  </section>
+
+  <section id="prototyping" class="card step reveal">
+    <div class="step-head">
+      <span class="label">04 — Prototyping</span>
+      <h2>From static frames to things you can click</h2>
+    </div>
+    <div class="step-body">
+      <p>Coding with AI has changed what a prototype can be for me. Instead of linking frames together, I can build something that behaves like the real thing and put it in front of people sooner.</p><ul class="uses"><li>Building prototypes in Claude Code with our design system hooked in, so the output uses real components, not lookalikes</li><li>Building working prototypes for interactions that are hard to judge from static frames</li><li>Testing real behaviour such as states, timing and responsive breakpoints</li><li>Vibe coding small tools for specific needs, instead of waiting on, or paying for, a product that almost fits</li><li>Designing and <em>vibe coding</em> this portfolio with Claude, from palette exploration to the live site</li></ul><div class="example"><span class="label">In practice · Events</span><p>The Events walkthrough at the top of that case study is a working prototype, not a mock-up. You create an Event, switch between the organiser's back end and the employee's front end, and reset it to run again. Reviewing something you can click, instead of a flow diagram, makes the gap between "content page" and "first-class object" obvious in seconds.</p></div>
+    </div>
+  </section>
+
+  <section id="systems" class="card step reveal">
+    <div class="step-head">
+      <span class="label">05 — Design systems</span>
+      <h2>Rules a machine can check</h2>
+    </div>
+    <div class="step-body">
+      <p>On Unily Futures I designed a block system that both a CMS editor and Indi, Unily's AI agent, build pages with. That changed how I write design rules: guidelines that read well to a human designer aren't enough. Every rule had to be explicit enough for the Brand Identity Agent to verify programmatically.</p><ul class="uses"><li><span><strong>Constraints, not options:</strong> character ranges, capped grid counts and enforced image crops instead of open fields</span></li><li><span><strong>One shared library:</strong> the agent uses the same blocks as people, with nothing bespoke built just for it</span></li><li><span><strong>Templates from real pages:</strong> four reference templates drawn from live client sites, which Indi picks between by prompt intent</span></li></ul><div class="example"><span class="label">In practice · My team's toolkit</span><p>Day to day, I build Claude workflows and skills for the repetitive parts of design work, including a CRD generator my team actually uses. Documentation starts from a consistent, complete structure instead of a blank page, and the time goes into the decisions rather than the formatting.</p></div>
+    </div>
+  </section>
+
+  <section id="communication" class="card step reveal">
+    <div class="step-head">
+      <span class="label">06 — Communication</span>
+      <h2>The right story for each room</h2>
+    </div>
+    <div class="step-body">
+      <p>I'd rather argue early than redesign late, and that depends on clear writing. AI helps me tailor the same decision for different audiences without losing the reasoning.</p><ul class="uses"><li>Drafting PRD sections, acceptance criteria and descoping rationale with my PM</li><li>Summarising research and design decisions for engineering, product and leadership</li><li>Tightening case studies and presentations, including the ones on this site</li></ul><div class="example"><span class="label">In practice · Notifications</span><p>Quiet hours started as a wellbeing feature and got prioritised as a compliance one: messages sent outside working hours carry real financial risk where the law gives people a right to disconnect. The same decision needed a business case for leadership, a scope note for engineering and a plain explanation for clients. Shaping each version with AI kept the reasoning identical, even though the story changed with the room.</p></div>
+    </div>
+  </section>
+
+  <section class="card close reveal">
+    <p class="label">Where I draw the line</p>
+    <h2>AI widens the options. <em>The judgement stays mine.</em></h2>
+    <p>I use it to start faster, see more and say things more clearly. I don't use it to decide what users need, or to replace the time spent with them. The craft, the taste and the call on what ships are still the job.</p>
+  </section>
+
+  <div class="next reveal">
+    <a href="work/portal-blocks.html"><span class="label">Related case study</span><h3>Unily Futures →</h3></a>
+    <a href="index.html#work"><span class="label">Back to</span><h3>Selected work →</h3></a>
+  </div>
+
+  <footer>
+    <p class="label">© 2026 Roksana Truszkowska</p>
+    <p class="label">Designed &amp; built with ♥ (&amp; coffee)</p>
+  </footer>
+</main>
+
+<script>
+  const navWrap = document.getElementById('navWrap');
+  let lastY = window.scrollY;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    navWrap.classList.toggle('hidden', y > lastY && y > 120);
+    lastY = y;
+  }, { passive: true });
+
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach((el) => el.classList.add('in'));
+  }
+</script>
+<script src="assets/js/cv.js" defer></script>
+</body>
+</html>
