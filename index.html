@@ -569,7 +569,6 @@ top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addE
   .g-cover { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: left top; transition: transform 800ms var(--ease); }
   a.g-bleed:hover .g-cover { transform: scale(1.04); }
 
-  .g-bleed::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11, 17, 34, 0) 15%, rgba(11, 17, 34, 0.88) 55%, rgba(11, 17, 34, 0.97) 100%); }
   .g-over { position: relative; z-index: 1; padding: 26px; display: flex; flex-direction: column; gap: 6px; }
   .g-over .g-mark { color: var(--tan-light); }
   .g-big { font-family: var(--font-display); font-size: 30px; line-height: 1.1; }
@@ -863,16 +862,11 @@ top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addE
       </a>
 
       <a class="g g-bleed g-r1 g-w5" href="work/portal-blocks.html" aria-label="Unily Futures case study">
-        <img class="g-cover" src="assets/img/cards/futures-dashboard.webp" alt="Unily Futures site dashboard in dark mode">
-        <div class="g-over">
-          <p class="g-mark">Unily Futures</p>
-          <p class="g-big">Page builds ~40% faster</p>
-          <p class="g-sub">A block system a CMS editor and an AI agent can both build with</p>
-        </div>
+        <img class="g-cover" style="object-position: center top" src="assets/img/cards/futures-home.webp" alt="The final Unily Futures intranet home page, built from blocks">
         <div class="g-hover" aria-hidden="true">
           <p class="g-mark">Unily Futures · 0 → 1 design system</p>
-          <p class="g-htitle">A block system a CMS editor and an AI agent can both build with</p>
-          <p class="g-sub">Two builders who fail in opposite directions, one system for both</p>
+          <p class="g-htitle">Page builds ~40% faster</p>
+          <p class="g-sub">A block system a CMS editor and an AI agent can both build with</p>
           <svg class="g-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
         </div>
       </a>

@@ -168,7 +168,7 @@ a.s-chip:hover { background: rgba(224,122,74,.22); }
 .s-shot { display: none; }
 .s-shot.on { display: block; animation: s-in 500ms var(--ease); }
 @keyframes s-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
-.s-shot img, .s-shot video { width: 100%; max-height: 560px; object-fit: contain; border-radius: 10px; box-shadow: 0 20px 44px rgba(20,19,18,.18); background: #fff; }
+.s-shot img, .s-shot video { display: block; width: auto; height: auto; max-width: 100%; max-height: 560px; margin: 0 auto; border-radius: 10px; box-shadow: 0 20px 44px rgba(20,19,18,.18); }
 .s-ctrl { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 20px; flex-wrap: wrap; }
 .s-step-text { flex: 1; min-width: 240px; }
 .s-step-n { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--tan-text); }
