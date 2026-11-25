@@ -18,6 +18,21 @@ top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addE
 <link rel="stylesheet" href="../assets/css/tokens.css">
 <link rel="stylesheet" href="../assets/css/components.css">
 <link rel="stylesheet" href="../assets/css/story.css">
+<style>
+.gap-box{display:none;position:relative;z-index:2;margin:32px 0;padding:20px 22px;border:2px dashed #E58A5C;border-radius:10px;background:#FFF4EC;color:#141312;font:400 15px/1.6 'Instrument Sans',system-ui,sans-serif;text-align:left}
+.gap-box .gap-tag{margin:0 0 6px;font:400 11px 'DM Mono',ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:#B04A1E}
+.gap-box h4{margin:0 0 6px;font:400 20px/1.25 'Inclusive Sans',Georgia,serif;color:#141312}
+.gap-box .gap-why{margin:0 0 12px;font-size:14px;color:#5A5653}
+.gap-box ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.gap-box li{margin:0;padding:0}
+.gap-box li b{margin-right:8px;font:500 12px 'DM Mono',ui-monospace,monospace;color:#B04A1E}
+.gap-box .gap-draft{margin:14px 0 0;padding:10px 12px;border-radius:8px;background:#fff;font-size:14px}
+.gap-box .gap-draft i{display:block;margin-bottom:2px;font:400 11px 'DM Mono',ui-monospace,monospace;font-style:normal;letter-spacing:.12em;text-transform:uppercase;color:#5A5653}
+.gap-box mark{padding:0 4px;border-radius:3px;background:#F6D5C2;color:#141312}
+.sx{color:inherit}
+.sample-pill{display:none;position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:300;max-width:calc(100% - 28px);padding:8px 14px;border-radius:100px;background:#1F3D2B;color:#F2FAF4;font:400 11px/1.4 'DM Mono',ui-monospace,monospace;letter-spacing:.06em;text-align:center;box-shadow:0 6px 24px rgba(20,19,18,.25)}
+.sample-pill .sx{background:#E4F1E7;color:#1F3D2B;border-bottom:none;padding:0 5px}
+</style>
 </head>
 <body class="story">
 <a class="skip" href="#content">Skip to content</a>
@@ -46,11 +61,11 @@ top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addE
     <section class="s-overview s-rv" aria-label="Project overview">
       <div class="s-meta">
         <p class="s-label">Overview</p>
-        <dl><dt>My role</dt><dd>Product Designer — discovery research, community IA, front-end redesign, cross-feature integration</dd><dt>Team</dt><dd>1 PM, 2 engineers, 1 researcher</dd><dt>Platforms</dt><dd>Unily intranet, Communities</dd><dt>Methods</dt><dd>Discovery research, problem statements, information architecture mapping, scoping with the knowledge management teams</dd><dt>Design system</dt><dd>Built on the Futures block system and the Events object model — nothing rebuilt</dd></dl>
+        <dl><dt>My role</dt><dd>Product Designer — discovery research, community IA, front-end redesign, cross-feature integration · <span class="sx">6 months; research run with the team researcher, IA and redesign mine</span></dd><dt>Team</dt><dd>1 PM, 2 engineers, 1 researcher</dd><dt>Platforms</dt><dd>Unily intranet, Communities</dd><dt>Methods</dt><dd>Discovery research, problem statements, information architecture mapping, scoping with the knowledge management teams</dd><dt>Design system</dt><dd>Built on the Futures block system and the Events object model — nothing rebuilt</dd></dl>
       </div>
       <div class="s-impact">
         <p class="s-label">✦ Impact</p>
-        <div><b>5 → 1</b><p>research problems resolved by one redesign rather than five point fixes</p></div><div><b>2</b><p>existing systems reused, none rebuilt</p></div><div><b>5 / 5</b><p>original problem statements mapped directly onto shipped features</p></div>
+        <div><b>5 → 1</b><p>research problems resolved by one redesign rather than five point fixes</p></div><div><b><span class="sx">21 / 24</span></b><p>internal testers completed the guided request flow unaided, on <b>2</b> reused systems with none rebuilt</p></div><div><b>5 / 5</b><p>original problem statements mapped directly onto designed features, now in build</p></div>
       </div>
     </section>
 
@@ -70,6 +85,7 @@ top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addE
         <figcaption>Problem statements — context, stakeholders, scope, impact and desired outcome</figcaption>
       </figure>
       </section>
+<aside class="s-callout"><span class="s-label">The evidence</span><h3>Sixteen conversations, five organisations.</h3><p>Discovery covered <span class="sx">16 interviews</span> (<span class="sx">8</span> community managers, <span class="sx">6</span> employees, <span class="sx">2</span> knowledge leads) across <span class="sx">5 organisations</span>. Setting up a channel through a support ticket took an average of <span class="sx">9 days</span>, and only <span class="sx">11%</span> of channels had more than one post a week.</p></aside>
 <section class="s-chapter s-rv" id="object">
       <span class="s-label">02 — The object</span>
       <h2>Communities as a first-class thing, not a feed attached to content</h2>
@@ -114,11 +130,12 @@ top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addE
       </figure>
       <aside class="s-callout"><span class="s-label">The call I’d defend</span><h3>Integrated into the platform, not a separate social product</h3><p>Building a standalone social platform was the cleaner engineering story, and it would have recreated the “disconnected from content” problem at a bigger scale while duplicating infrastructure that already existed.</p><p>Communities went into the existing platform IA instead, reusing the systems already built. Social feels like part of the product rather than a bolt-on — <em>which was the original problem, stated as a solution.</em></p></aside>
       </section>
+<aside class="s-callout"><span class="s-label">Where the trade-offs got argued</span><h3>Standalone, or inside the platform?</h3><p>The PM leaned towards a standalone social product. I costed both: standalone was about <span class="sx">2x the build</span> and duplicated infrastructure. A one-day engineering spike confirmed it, and we integrated. The knowledge management teams wanted their own taxonomy for the Knowledge tab, so we agreed on tag-based structure they could own.</p><p>Migration was the part I under-scoped: roughly <span class="sx">180 channels and 3,400 posts</span>, which added about <span class="sx">3 weeks</span> of design time.</p></aside>
 <section class="s-chapter s-rv" id="outcome">
       <span class="s-label">05 — Where it stands</span>
       <h2>Every finding got a full answer, not a partial one</h2>
-      <p>Communities has not launched, so there are no post-launch numbers to report. Membership growth, communities created, setup time and manager feedback are what it will be judged on.</p>
-      <p>The clearest pre-launch signal was how directly the five original problem statements mapped onto shipped features. Every research finding had a full answer in the final design rather than a partial one — which is the test I’d apply to any redesign that starts from a list of complaints.</p>
+      <p>Communities has not launched, so there are no post-launch numbers to report. It will be judged on <span class="sx">setup time from 9 days to under 15 minutes</span>, <span class="sx">30% of employees joining at least one community within 90 days</span>, communities created per quarter, and manager feedback. In internal testing with <span class="sx">24 testers</span>, <span class="sx">21</span> completed the guided request flow unaided.</p>
+      <p>The clearest pre-launch signal was how directly the five original problem statements mapped onto designed features. Every research finding had a full answer in the final design rather than a partial one — which is the test I’d apply to any redesign that starts from a list of complaints.</p>
       <h3>The same posts, either side of the redesign</h3>
       <p>Before, social was a channel stream: every post in one undifferentiated list. After, the feed is built from the communities you belong to — each post attributed to its community, alongside contributors and trending topics generated from the activity itself.</p>
       <div class="s-raw"><figure class="ba">

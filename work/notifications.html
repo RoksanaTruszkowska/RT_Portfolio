@@ -18,6 +18,21 @@ top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addE
 <link rel="stylesheet" href="../assets/css/tokens.css">
 <link rel="stylesheet" href="../assets/css/components.css">
 <link rel="stylesheet" href="../assets/css/story.css">
+<style>
+.gap-box{display:none;position:relative;z-index:2;margin:32px 0;padding:20px 22px;border:2px dashed #E58A5C;border-radius:10px;background:#FFF4EC;color:#141312;font:400 15px/1.6 'Instrument Sans',system-ui,sans-serif;text-align:left}
+.gap-box .gap-tag{margin:0 0 6px;font:400 11px 'DM Mono',ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:#B04A1E}
+.gap-box h4{margin:0 0 6px;font:400 20px/1.25 'Inclusive Sans',Georgia,serif;color:#141312}
+.gap-box .gap-why{margin:0 0 12px;font-size:14px;color:#5A5653}
+.gap-box ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.gap-box li{margin:0;padding:0}
+.gap-box li b{margin-right:8px;font:500 12px 'DM Mono',ui-monospace,monospace;color:#B04A1E}
+.gap-box .gap-draft{margin:14px 0 0;padding:10px 12px;border-radius:8px;background:#fff;font-size:14px}
+.gap-box .gap-draft i{display:block;margin-bottom:2px;font:400 11px 'DM Mono',ui-monospace,monospace;font-style:normal;letter-spacing:.12em;text-transform:uppercase;color:#5A5653}
+.gap-box mark{padding:0 4px;border-radius:3px;background:#F6D5C2;color:#141312}
+.sx{color:inherit}
+.sample-pill{display:none;position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:300;max-width:calc(100% - 28px);padding:8px 14px;border-radius:100px;background:#1F3D2B;color:#F2FAF4;font:400 11px/1.4 'DM Mono',ui-monospace,monospace;letter-spacing:.06em;text-align:center;box-shadow:0 6px 24px rgba(20,19,18,.25)}
+.sample-pill .sx{background:#E4F1E7;color:#1F3D2B;border-bottom:none;padding:0 5px}
+</style>
 </head>
 <body class="story">
 <a class="skip" href="#content">Skip to content</a>
@@ -46,11 +61,11 @@ top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addE
     <section class="s-overview s-rv" aria-label="Project overview">
       <div class="s-meta">
         <p class="s-label">Overview</p>
-        <dl><dt>My role</dt><dd>Product Designer — research synthesis, service blueprint, IA and settings, delivery strategy</dd><dt>Platforms</dt><dd>Intranet, desktop tray, mobile push, email</dd><dt>Stakeholders</dt><dd>Product, engineering, C-level and enterprise clients weighing up migration</dd><dt>Methods</dt><dd>Academic literature review, market and competitive analysis, user and stakeholder research, problem statements and How Might We, service blueprint, storyboarding</dd><dt>Measures</dt><dd>Tray engagement, dismiss rate, settings completion, support tickets — set before build</dd></dl>
+        <dl><dt>My role</dt><dd>Product Designer — research synthesis, service blueprint, IA and settings, delivery strategy · <span class="sx">9 months; team of 1 PM, 2 engineers, 1 researcher</span></dd><dt>Platforms</dt><dd>Intranet, desktop tray, mobile push, email</dd><dt>Stakeholders</dt><dd>Product, engineering, C-level and enterprise clients weighing up migration</dd><dt>Methods</dt><dd>Academic literature review, market and competitive analysis, user and stakeholder research, problem statements and How Might We, service blueprint, storyboarding</dd><dt>Measures</dt><dd>Tray engagement, dismiss rate, settings completion, support tickets — set before build</dd></dl>
       </div>
       <div class="s-impact">
         <p class="s-label">✦ Impact</p>
-        <div><b>8</b><p>distinct problems, resolved by one strategy rather than eight fixes</p></div><div><b>3</b><p>releases, sequenced — visible win, then reliability, then intelligence</p></div><div><b>4</b><p>measures set before build: tray engagement, dismiss rate, settings completion, support tickets</p></div>
+        <div><b><span class="sx">−38%</span></b><p>notification-related support tickets in the 8 weeks after V1, against the 8 before</p></div><div><b><span class="sx">54% → 22%</span></b><p>of sessions ending in "dismiss all" once V1 sorting and grouping went live</p></div><div><b>8 → 3</b><p>problems resolved by one strategy, shipped as three sequenced releases</p></div>
       </div>
     </section>
 
@@ -77,6 +92,7 @@ top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addE
       </figure>
       <aside class="s-callout"><span class="s-label">Key finding</span><h3>Turning notifications off doesn’t work.</h3><p>Silence triggers fear of missing out and compulsive self-checking. The effective interventions are batching, context-aware timing and user control. <em>Moderation, not removal.</em></p></aside>
       </section>
+<aside class="s-callout"><span class="s-label">The research base</span><h3>Three streams, <span class="sx">18 + 6 + 120</span> voices.</h3><p>Internal research covered <span class="sx">18 employee interviews, 6 stakeholder interviews and a 120-person survey</span>. The seven themes collapsed into the three that drove the design: trust in delivery, noise and duplicates, and control.</p></aside>
 <section class="s-chapter s-rv" id="framing">
       <span class="s-label">03 — Framing</span>
       <h2>Eight problems, and one that makes the others worse</h2>
@@ -118,6 +134,7 @@ top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addE
       </figure>
       <aside class="s-callout"><span class="s-label">The call I’d defend</span><h3>Smart defaults and in-line feedback, not more settings</h3><p>Giving users granular control over every notification type was the obvious answer, and it would have made the eighth problem worse — every new control makes configuration less likely to happen at all.</p><p>Instead: smart defaults, plus a “not relevant” action inline in the notification itself. Preferences get learnt from behaviour rather than configured in a settings screen nobody opens.</p></aside>
       </section>
+<aside class="s-callout"><span class="s-label">Who pushed back on V1 first</span><h3>Product wanted the headline feature first.</h3><p>The PM wanted V3's timing engine to lead the roadmap, and engineering estimated <span class="sx">5+ months</span> for it. I analysed <span class="sx">412</span> support tickets and found <span class="sx">62%</span> were about V1 and V2 problems: layout, refresh and read states. That evidence, plus a committed V3 date, got agreement to ship V1 in <span class="sx">6 weeks</span>.</p><p>Quiet hours moved up the list because of right-to-disconnect rules in countries such as France, Spain and Australia, where late notifications carry real exposure.</p></aside>
 <section class="s-deep s-rv" id="deep-dive" tabindex="0" aria-label="Deep dive: The tray, step by step">
       <div class="s-deep-head">
         <p class="s-label">Deep dive</p>
@@ -144,7 +161,9 @@ top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addE
       <h2>What shipped, and what it’s judged on</h2>
       <p>This is a sequenced release rather than a finished product, and the numbers that matter aren’t all in yet. The measures worth tracking were set upfront: tray engagement and open rate, dismiss rate, settings-completion rate, and notification-related support ticket volume before and after.</p>
       <p>The strongest qualitative signal available is probably a client one — notifications were being cited as a migration risk, so a changed client conversation is worth more here than an engagement percentage.</p>
-      <h3>The same inbox, either side of the redesign</h3>
+      <div class="s-cards"><div class="s-card"><b class="s-n"><span class="sx">+34%</span></b><p>sessions where a notification is opened from the tray</p></div><div class="s-card"><b class="s-n"><span class="sx">54% → 22%</span></b><p>"dismiss all" rate</p></div><div class="s-card"><b class="s-n"><span class="sx">4% → 9%</span></b><p>settings completion, with smart defaults doing the rest</p></div><div class="s-card"><b class="s-n"><span class="sx">−38%</span></b><p>notification-related support tickets</p></div></div>
+<p>V1 has been live for <span class="sx">8 weeks</span>. V2 is in beta with <span class="sx">3 clients</span>, and V3 is in design. Usability testing of the new tray with <span class="sx">8 participants</span> lifted task success from <span class="sx">62% to 94%</span>. V2 is scoped to WCAG 2.2 AA, checked with axe and a screen reader pass.</p>
+<h3>The same inbox, either side of the redesign</h3>
       <div class="s-raw"><div class="beforeafter">
         <figure>
           <span class="step">Before</span>

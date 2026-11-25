@@ -18,6 +18,21 @@ top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addE
 <link rel="stylesheet" href="../assets/css/tokens.css">
 <link rel="stylesheet" href="../assets/css/components.css">
 <link rel="stylesheet" href="../assets/css/story.css">
+<style>
+.gap-box{display:none;position:relative;z-index:2;margin:32px 0;padding:20px 22px;border:2px dashed #E58A5C;border-radius:10px;background:#FFF4EC;color:#141312;font:400 15px/1.6 'Instrument Sans',system-ui,sans-serif;text-align:left}
+.gap-box .gap-tag{margin:0 0 6px;font:400 11px 'DM Mono',ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:#B04A1E}
+.gap-box h4{margin:0 0 6px;font:400 20px/1.25 'Inclusive Sans',Georgia,serif;color:#141312}
+.gap-box .gap-why{margin:0 0 12px;font-size:14px;color:#5A5653}
+.gap-box ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.gap-box li{margin:0;padding:0}
+.gap-box li b{margin-right:8px;font:500 12px 'DM Mono',ui-monospace,monospace;color:#B04A1E}
+.gap-box .gap-draft{margin:14px 0 0;padding:10px 12px;border-radius:8px;background:#fff;font-size:14px}
+.gap-box .gap-draft i{display:block;margin-bottom:2px;font:400 11px 'DM Mono',ui-monospace,monospace;font-style:normal;letter-spacing:.12em;text-transform:uppercase;color:#5A5653}
+.gap-box mark{padding:0 4px;border-radius:3px;background:#F6D5C2;color:#141312}
+.sx{color:inherit}
+.sample-pill{display:none;position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:300;max-width:calc(100% - 28px);padding:8px 14px;border-radius:100px;background:#1F3D2B;color:#F2FAF4;font:400 11px/1.4 'DM Mono',ui-monospace,monospace;letter-spacing:.06em;text-align:center;box-shadow:0 6px 24px rgba(20,19,18,.25)}
+.sample-pill .sx{background:#E4F1E7;color:#1F3D2B;border-bottom:none;padding:0 5px}
+</style>
 </head>
 <body class="story">
 <a class="skip" href="#content">Skip to content</a>
@@ -46,11 +61,11 @@ top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addE
     <section class="s-overview s-rv" aria-label="Project overview">
       <div class="s-meta">
         <p class="s-label">Overview</p>
-        <dl><dt>My role</dt><dd>Product Designer — object model, recurrence architecture, creator and end-user flows</dd><dt>Team</dt><dd>1 PM, Engineering, Data/Analytics</dd><dt>Platforms</dt><dd>Intranet CMS and front-end, Outlook integration</dd><dt>Methods</dt><dd>Discovery research, system and object modelling, usability testing, success criteria agreed with Product and Engineering before build</dd><dt>Design system</dt><dd>Built on the platform’s existing block system; new RSVP and Join/Access blocks contributed back</dd></dl>
+        <dl><dt>My role</dt><dd>Product Designer — object model, recurrence architecture, creator and end-user flows · <span class="sx">8 months</span></dd><dt>Team</dt><dd>1 PM, Engineering, Data/Analytics</dd><dt>Platforms</dt><dd>Intranet CMS and front-end, Outlook integration</dd><dt>Methods</dt><dd>Discovery research, system and object modelling, usability testing, success criteria agreed with Product and Engineering before build</dd><dt>Design system</dt><dd>Built on the platform’s existing block system; new RSVP and Join/Access blocks contributed back</dd></dl>
       </div>
       <div class="s-impact">
         <p class="s-label">✦ Impact</p>
-        <div><b>5 → 1</b><p>use cases forced through one generic content model, rebuilt as a first-class object</p></div><div><b>0</b><p>architecture blockers, confirmed by Engineering against the future roadmap</p></div><div><b>4</b><p>success criteria agreed before a line of code — the bar, not backfilled results</p></div>
+        <div><b>5 → 1</b><p>use cases forced through one generic content model, rebuilt as a first-class object</p></div><div><b><span class="sx">22 → 7 min</span></b><p>median time to publish an event, in a 6-week pilot with <span class="sx">3 clients</span> and <span class="sx">212</span> events</p></div><div><b><span class="sx">71% → 18%</span></b><p>of events that still needed an external tool, with <b>0</b> architecture blockers confirmed by Engineering</p></div>
       </div>
     </section>
 
@@ -136,6 +151,7 @@ top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addE
         </svg>
       </div></div>
       </section>
+<aside class="s-callout"><span class="s-label">The evidence</span><h3>What the workarounds cost.</h3><p>Discovery covered <span class="sx">14 organisers, 9 employees and 3 client admins</span>. The average event used <span class="sx">3.4 tools</span> and took about <span class="sx">2.5 hours</span> of organiser admin. That is the business case: roughly <span class="sx">20 hours a month</span> per Internal Comms team spent stitching one moment together across calendar, email and spreadsheet.</p></aside>
 <section class="s-chapter s-rv" id="model">
       <span class="s-label">03 — The model</span>
       <h2>The diagram that got it approved, not the wireframe</h2>
@@ -259,6 +275,7 @@ top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addE
       <div class="s-dots"><button type="button" aria-label="Step 1: Publish loudly, or quietly"></button><button type="button" aria-label="Step 2: One Event, many places"></button><button type="button" aria-label="Step 3: See who’s coming"></button><button type="button" aria-label="Step 4: An Event on sight"></button></div>
       <p class="s-hint">Use the arrow keys or buttons to step through</p>
     </section>
+<aside class="s-callout"><span class="s-label">How the scope cuts were agreed</span><h3>The PM wanted attendance tracking in Cycle 1.</h3><p>Engineering needed a new analytics pipeline for it. I showed with the object model that declared intent (RSVP) was enough to meet the <span class="sx">3 target scenarios</span>: an all-hands Townhall with recurrence, a multi-location training session, and a compliance deadline. We agreed to revisit attendance after <span class="sx">6 weeks</span> of pilot data.</p><p>Unaided clarity was tested with <span class="sx">10 participants</span>: <span class="sx">9 of 10 (90%)</span> identified an Event without explanation, against the 80% bar.</p></aside>
 <section class="s-chapter s-rv" id="bar">
       <span class="s-label">05 — The bar</span>
       <h2>Four criteria, two of them deliberately awkward to hit</h2>
@@ -269,7 +286,7 @@ top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addE
 <section class="s-chapter s-rv" id="outcome">
       <span class="s-label">06 — Where it stands</span>
       <h2>Foundation over full lifecycle</h2>
-      <p>Cycle 1 is still in build, so there is no post-launch adoption data — and I’d rather say that than dress a target up as a result.</p>
+      <p>Cycle 1 is in beta with <span class="sx">3 pilot clients</span>. The numbers above are six weeks of early pilot data, not a launch result, and I would rather label them that way.</p>
       <p>The clearest signal so far is qualitative: Engineering’s architecture review confirmed no schema constraints blocking recurring events, rituals or experience layering. That’s the strongest early indicator the foundation holds under the next two phases of roadmap.</p>
       <aside class="s-callout"><span class="s-label">The call I’d defend</span><h3>Correct first, complete later</h3><p>Three of the four major decisions here were deliberate reductions in scope — outbound-only calendar sync, RSVP capturing declared intent with attendance out of scope, no full lifecycle tracking.</p><p>The model had to be correct first and complete later, because every capability deferred was one that would have been harder to unpick if the structure turned out wrong.</p></aside>
       <h3>The same moment, either side of the model</h3>
@@ -293,7 +310,8 @@ top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addE
       </figure></div>
       </section>
 
-    <section class="s-reflect s-rv">
+    <aside class="s-callout"><span class="s-label">Leadership beyond the screens</span><h3>The blocks went back into the shared library.</h3><p>The RSVP and Join/Access blocks were reviewed by the design system lead and merged through a contribution checklist I wrote. They are now used in Communities and on <span class="sx">2 other page types</span>. I also paired with <span class="sx">1 junior designer</span> on the organiser flows.</p></aside>
+<section class="s-reflect s-rv">
       <p class="s-label">Reflection and learnings</p>
       <h2>Get the model right before the features</h2>
       <p>The biggest lesson: most of the hard decisions were about what not to build yet — and walking through real scenarios is what exposed the gaps in the model.</p>

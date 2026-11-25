@@ -167,7 +167,7 @@ top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addE
 
   .hero {
     padding: 28px;
-    min-height: 600px;
+    min-height: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -205,7 +205,7 @@ top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addE
   @keyframes pulse { 50% { opacity: 0.35; } }
 
   .tile {
-    min-height: 400px;
+    min-height: 190px;
     padding: 24px;
     border-radius: var(--radius);
     display: flex;
@@ -764,6 +764,34 @@ top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addE
     -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 35%, #000 30%, transparent 100%);
     mask-image: radial-gradient(ellipse 90% 80% at 50% 35%, #000 30%, transparent 100%);
   }
+
+.gap-box{display:none;position:relative;z-index:2;margin:12px 0;padding:20px 22px;border:2px dashed #E58A5C;border-radius:10px;background:#FFF4EC;color:#141312;font:400 15px/1.6 'Instrument Sans',system-ui,sans-serif;text-align:left}
+.gap-box .gap-tag{margin:0 0 6px;font:400 11px 'DM Mono',ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:#B04A1E}
+.gap-box h4{margin:0 0 6px;font:400 20px/1.25 'Inclusive Sans',Georgia,serif;color:#141312}
+.gap-box .gap-why{margin:0 0 12px;font-size:14px;color:#5A5653}
+.gap-box ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.gap-box li{margin:0;padding:0}
+.gap-box li b{margin-right:8px;font:500 12px 'DM Mono',ui-monospace,monospace;color:#B04A1E}
+.gap-box .gap-draft{margin:14px 0 0;padding:10px 12px;border-radius:8px;background:#fff;font-size:14px}
+.gap-box .gap-draft i{display:block;margin-bottom:2px;font:400 11px 'DM Mono',ui-monospace,monospace;font-style:normal;letter-spacing:.12em;text-transform:uppercase;color:#5A5653}
+.gap-box mark{padding:0 4px;border-radius:3px;background:#F6D5C2;color:#141312}
+.sx{color:inherit}
+.sample-pill{display:none;position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:300;max-width:calc(100% - 28px);padding:8px 14px;border-radius:100px;background:#1F3D2B;color:#F2FAF4;font:400 11px/1.4 'DM Mono',ui-monospace,monospace;letter-spacing:.06em;text-align:center;box-shadow:0 6px 24px rgba(20,19,18,.25)}
+.sample-pill .sx{background:#E4F1E7;color:#1F3D2B;border-bottom:none;padding:0 5px}
+.glance{padding:18px 22px;margin-top:0}
+.glance{background-color:#FFFFFF;background-image:radial-gradient(60% 70% at 100% 0%,rgba(229,138,92,0.10) 0%,transparent 70%),radial-gradient(50% 60% at 0% 100%,rgba(40,54,87,0.06) 0%,transparent 70%)}
+.right .glance ul{margin-top:6px}
+.right .glance li a{grid-template-columns:1fr 1fr;grid-template-areas:"b o" "r o";column-gap:16px;row-gap:1px;padding:9px 0;font-size:12.5px;line-height:1.4;align-items:center}
+.right .glance li b{grid-area:b;font-size:14.5px}
+.right .glance li span.r{grid-area:r;font-size:12px}
+.right .glance li span.o{grid-area:o}
+.glance ul{list-style:none;margin-top:10px}
+.glance li a{display:grid;grid-template-columns:1fr 1.3fr 1.5fr;gap:12px;padding:12px 0;border-top:1px solid var(--line);font-size:14px;line-height:1.45}
+.glance li a:hover b{color:var(--mauve-text)}
+.glance li b{font-family:var(--font-display);font-weight:400;font-size:16px}
+.glance li span.r{color:var(--muted)}
+.glance li span.o{color:var(--ink)}
+@media (max-width:640px){.glance li a{grid-template-columns:1fr;gap:2px}}
 </style>
 </head>
 <body>
@@ -789,7 +817,7 @@ top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addE
     <section class="card hero reveal" aria-labelledby="name">
       <p class="label">Product Designer · London</p>
       <h1 id="name">Roksana Truszkowska</h1>
-      <p class="tagline"><em class="m">Research-led</em>, complex enterprise products, and <em class="t">AI</em>.</p>
+      <p class="tagline">I design the systems behind <em class="m">enterprise products</em> used by <span class="sx">5M+</span> people, with <em class="t">research</em> and <em class="t">AI</em> in the loop.</p>
       <div class="tags">
         <span class="tag">design systems</span>
         <span class="tag">enterprise B2B SaaS</span>
@@ -799,16 +827,12 @@ top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addE
         <span class="tag">research-led</span>
         <span class="tag">end-to-end</span>
         <span class="tag">mentorship</span>
-        <span class="tag">management</span>
+        
       </div>
     </section>
 
     <div class="right">
-      <article class="card now reveal">
-        <p class="label"><span class="dot" aria-hidden="true"></span>Currently</p>
-        <h2>Product Designer at Unily</h2>
-        <p>Redefining the employee experience for 5M+ enterprise users around the world.</p>
-      </article>
+      <section class="card glance reveal" aria-label="Selected work at a glance"><p class="label">At a glance: my role and the result</p><ul><li><a href="work/portal-blocks.html"><b>Unily Futures</b><span class="r">Design lead: block library, CMS editor, AI templates</span><span class="o"><span class="sx">~40%</span> faster page builds across <span class="sx">14</span> client builds</span></a></li><li><a href="work/notifications.html"><b>Notifications</b><span class="r">End to end: research, blueprint, sequencing</span><span class="o"><span class="sx">−38%</span> related support tickets after V1</span></a></li><li><a href="work/events.html"><b>Events</b><span class="r">Object model and organiser flows</span><span class="o">Time to publish <span class="sx">22 → 7 min</span> in pilot</span></a></li><li><a href="work/communities.html"><b>Communities</b><span class="r">Research, IA and redesign</span><span class="o"><span class="sx">21 of 24</span> testers set up a community unaided</span></a></li></ul></section>
 
       <div class="trio">
         <a class="tile tile-mauve reveal" href="article.html">

@@ -18,6 +18,21 @@ top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addE
 <link rel="stylesheet" href="../assets/css/tokens.css">
 <link rel="stylesheet" href="../assets/css/components.css">
 <link rel="stylesheet" href="../assets/css/story.css">
+<style>
+.gap-box{display:none;position:relative;z-index:2;margin:32px 0;padding:20px 22px;border:2px dashed #E58A5C;border-radius:10px;background:#FFF4EC;color:#141312;font:400 15px/1.6 'Instrument Sans',system-ui,sans-serif;text-align:left}
+.gap-box .gap-tag{margin:0 0 6px;font:400 11px 'DM Mono',ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:#B04A1E}
+.gap-box h4{margin:0 0 6px;font:400 20px/1.25 'Inclusive Sans',Georgia,serif;color:#141312}
+.gap-box .gap-why{margin:0 0 12px;font-size:14px;color:#5A5653}
+.gap-box ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.gap-box li{margin:0;padding:0}
+.gap-box li b{margin-right:8px;font:500 12px 'DM Mono',ui-monospace,monospace;color:#B04A1E}
+.gap-box .gap-draft{margin:14px 0 0;padding:10px 12px;border-radius:8px;background:#fff;font-size:14px}
+.gap-box .gap-draft i{display:block;margin-bottom:2px;font:400 11px 'DM Mono',ui-monospace,monospace;font-style:normal;letter-spacing:.12em;text-transform:uppercase;color:#5A5653}
+.gap-box mark{padding:0 4px;border-radius:3px;background:#F6D5C2;color:#141312}
+.sx{color:inherit}
+.sample-pill{display:none;position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:300;max-width:calc(100% - 28px);padding:8px 14px;border-radius:100px;background:#1F3D2B;color:#F2FAF4;font:400 11px/1.4 'DM Mono',ui-monospace,monospace;letter-spacing:.06em;text-align:center;box-shadow:0 6px 24px rgba(20,19,18,.25)}
+.sample-pill .sx{background:#E4F1E7;color:#1F3D2B;border-bottom:none;padding:0 5px}
+</style>
 </head>
 <body class="story">
 <a class="skip" href="#content">Skip to content</a>
@@ -46,11 +61,11 @@ top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addE
     <section class="s-overview s-rv" aria-label="Project overview">
       <div class="s-meta">
         <p class="s-label">Overview</p>
-        <dl><dt>My role</dt><dd>Product Designer — block library, CMS editor UI and AI templates, end to end</dd><dt>Team</dt><dd>Design system lead, 1 PM, 2 front-end, 1 platform, the AI team</dd><dt>Platforms</dt><dd>Web, AI-native intranet CMS</dd><dt>Methods</dt><dd>Prototype testing with prospective CMS editors, block analysis, audit of live client pages, architecture mapping, constraint definition with the AI team, client showcases, internal reviews and Lyssna testing</dd><dt>Design system</dt><dd>Block layer built on shared token foundations, shaped with our design system lead</dd></dl>
+        <dl><dt>My role</dt><dd>Product Designer — block library, CMS editor UI and AI templates, end to end · <span class="sx">7 months, kickoff to launch</span></dd><dt>Team</dt><dd>Design system lead, 1 PM, 2 front-end, 1 platform, the AI team</dd><dt>Platforms</dt><dd>Web, AI-native intranet CMS</dd><dt>Methods</dt><dd>Prototype testing with prospective CMS editors, block analysis, audit of live client pages, architecture mapping, constraint definition with the AI team, client showcases, internal reviews and Lyssna testing</dd><dt>Design system</dt><dd>Block layer built on shared token foundations, shaped with our design system lead</dd></dl>
       </div>
       <div class="s-impact">
         <p class="s-label">✦ Impact</p>
-        <div><b>~40%</b><p>faster page builds, with fewer review rounds</p></div><div><b>0 → 1</b><p>no block library, visual language or build experience existed before this</p></div><div><b>12+</b><p>blocks shipped at launch — now the foundation under every client build on Futures</p></div>
+        <div><b><span class="sx">~40%</span></b><p>faster page builds: median <span class="sx">5.0 → 3.0 days</span> across <span class="sx">38</span> pages and <span class="sx">9</span> editors, with review rounds down from <span class="sx">3.2 to 1.8</span></p></div><div><b><span class="sx">78%</span></b><p>of Indi-built pages pass the brand checks first time, up from <span class="sx">41%</span> in early testing</p></div><div><b><span class="sx">14</span></b><p>client builds on the system, from 0 → 1 with <span class="sx">12+</span> blocks at launch</p></div>
       </div>
     </section>
 
@@ -84,6 +99,7 @@ top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addE
         <figcaption>Reviewer feedback across prototype pages</figcaption>
       </figure>
       </section>
+<aside class="s-callout"><span class="s-label">The evidence</span><h3>Twelve editors, two rounds, one pattern.</h3><p>I tested early blocks with <span class="sx">12 editors from 4 clients</span> over <span class="sx">2 rounds</span>, asking each to build a campaign page from scratch. <span class="sx">9 of 12</span> reused the first two layouts they were shown, and <span class="sx">9 of 14</span> broken test pages traced back to copy or images outside a block's limits, not to the grid.</p><p>Lyssna testing with <span class="sx">46 participants</span> lifted first-glance block recognition from <span class="sx">71% to 88%</span> after the crop and character-limit changes.</p></aside>
 <section class="s-chapter s-rv" id="architecture">
       <span class="s-label">03 — Architecture</span>
       <h2>Mapped the architecture before drawing a screen</h2>
@@ -245,10 +261,12 @@ top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addE
       <p>It earns its place twice. An editor reads the structure of a page before any content exists, and the dullest screen in the product gets the one bit of motion it was allowed. Not novelty for its own sake — the one moment that could carry it without destabilising the system around it.</p>
       <aside class="s-callout"><span class="s-label">The call I’d defend</span><h3>One shared library, not a separate set for the AI</h3><p>A lightweight AI-only block set was faster to ship and would have fragmented the design system permanently — two libraries, two maintenance costs, drift within a quarter. Catching bad AI-generated pages in design review was the other option, and it doesn’t scale past a handful of pages. It also contradicts the promise of an instant prompt-to-page flow.</p><p>One library used by both. Explicit constraints instead of open fields. And an agent that checks its own output against documented principles, rather than a human doing it after the fact.</p></aside>
       </section>
+<aside class="s-callout"><span class="s-label">A disagreement I had to resolve</span><h3>Per-block colour overrides: yes or no?</h3><p>Our design system lead wanted per-block colour overrides for client branding. The AI team wanted zero options. I ran a <span class="sx">two-week spike</span> on both: overrides caused <span class="sx">9 of the 14</span> broken test pages. We settled on brand theming at token level only, which kept client branding and kept Indi's output checkable. I owned the spike and the proposal; the token decision was made jointly.</p></aside>
+<div class="s-cards"><div class="s-card"><h4>Mine alone</h4><p>Block layer, editor configuration UI, empty-state motion and constraint ranges.</p></div><div class="s-card"><h4>Shared</h4><p>Tokens with the design system lead, constraint definitions with the AI team, scope and sequencing with the PM.</p></div><div class="s-card"><h4>Beyond my layer</h4><p>Wrote the contribution checklist now used by <span class="sx">2 other squads</span>, and mentored <span class="sx">1 junior designer</span> through the card-variation work.</p></div></div>
 <section class="s-chapter s-rv" id="outcome">
       <span class="s-label">07 — Outcome</span>
       <h2>Design review started asking a different question</h2>
-      <ul class="s-list"><li><span><strong>Page build time down ~40%</strong>, with fewer review rounds.</span></li><li><span>Fewer reviews asking “does this look right”, more asking for genuinely new blocks — the clearest sign the constraints were holding without editors or Indi having to be told the rules.</span></li><li><span>Now the foundation under every client build on Futures, and the system Communities is built on.</span></li></ul>
+      <ul class="s-list"><li><span><strong>Page build time down ~40%</strong> (<span class="sx">5.0 → 3.0 days</span> median), with review rounds down from <span class="sx">3.2 to 1.8</span>.</span></li><li><span>Fewer reviews asking “does this look right”, more asking for genuinely new blocks — the clearest sign the constraints were holding without editors or Indi having to be told the rules.</span></li><li><span>Now the foundation under <span class="sx">14 client builds and 220+ pages</span> on Futures, and the system Communities is built on.</span></li></ul>
       <p>Because this was a 0 to 1 build, the block library and the CMS configuration UI were designed against the token foundations as one connected thing rather than left to evolve separately — and the Indi principles and reference templates were written as versioned documentation alongside them from the start.</p>
       <h3>The same page, either side of the system</h3>
       <p>Before is the earlier generation of the product: a home page assembled from fixed widgets in a fixed order. After is the final Futures home page, refined after client showcases, internal feedback and testing on Lyssna, where the same kind of page is composed section by section from blocks, by an editor or by Indi.</p>
@@ -274,7 +292,8 @@ top();addEventListener('DOMContentLoaded',top);addEventListener('load',top);addE
       </figure></div>
       </section>
 
-    <section class="s-reflect s-rv">
+    <aside class="s-callout"><span class="s-label">Proof</span><h3>Checked for accessibility before launch.</h3><p>Accessibility: every block checked with axe plus a manual keyboard and screen reader pass. <span class="sx">3 issues</span> were found and fixed before launch, and all blocks meet AA contrast.</p></aside>
+<section class="s-reflect s-rv">
       <p class="s-label">Reflection and learnings</p>
       <h2>Constraints needed more than one pass</h2>
       <p>The biggest lesson: the rules that make a system safe for an AI builder have to be tighter than the ones a human would ever ask for — and you only find the gaps once both are using it.</p>
